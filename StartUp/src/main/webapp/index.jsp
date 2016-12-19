@@ -118,7 +118,7 @@ footer {
 	<br>
 
 	<footer class="container-fluid text-center">
-		<p>Footer Text</p>
+		<p>풋터</p>
 	</footer>
 
 
