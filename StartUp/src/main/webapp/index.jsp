@@ -30,8 +30,8 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li><a href="#" style="color:#34495e;">법률안</a></li>
-					<li><a href="#" style="color:#34495e;">국회의원</a></li>
+					<li><a href="statute.do" style="color:#34495e;">의안</a></li>
+					<li><a href="Member_Parliament.do" style="color:#34495e;">의원</a></li>
 					<li><a href="board.do" style="color:#34495e;">게시판</a></li>
 					<li><a href="#" style="color:#34495e;">채팅</a></li>
 				</ul>
@@ -67,8 +67,7 @@
 			</form>
  -->		
  		 <div class="jumbotron text-center" style="width: 100%; height: 300px; background-image:url('img/gom.png'); background-color: white; opacity: 0.6; position: relative; padding: 20px;">
-			  <h1>깨끗한 대한민국</h1> 
-			  <p>We specialize in blablabla</p> 
+			  <h1>깨어있는 대한민국</h1> 
 			  <form class="form-inline">
 			    <div class="input-group">
 			      <input type="email" class="form-control" size="50" placeholder="Email Address" required>
@@ -85,7 +84,7 @@
 		<br>
 		<div class="row">
 			<div class="col-sm-3" >
-				<i class="material-icons" style="font-size:250px;color:#34495e;text-shadow:2px 2px 4px #000000;">cloud</i>
+					<i class="material-icons" style="font-size:250px;color:#34495e;text-shadow:2px 2px 4px #000000;">cloud</i>
 			</div>
 			<div class="col-sm-3">
 				<i class="material-icons" style="font-size:250px;color:#34495e;text-shadow:2px 2px 4px #000000;">cloud</i>

@@ -1,7 +1,7 @@
 <!--  
 	작성자 : 박성준
 	작성일 : 2016-12-19
-	목  적 : 로그인 및 회원가입시 사용
+	목  적 : 법 관련 페이지
 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -19,24 +19,13 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="css/board_layout.css">
-<title>게시판</title>
+<link rel="stylesheet" href="css/layout.css">
+<title>법안</title>
 </head>
 <body>
-<div class="container-fluid">
-  <div class="row content">
-	<!-- Header -->
+<!-- Header -->
 	<tiles:insertAttribute name="header" />
-	
-	<tiles:insertAttribute name="sidebar"/>
-
-	<!-- Main Wrapper -->
-	<tiles:insertAttribute name="content" />
-	<!--풋터-->
-	</div>
-</div>
-
-<tiles:insertAttribute name="footer" />
-
+<!-- Main Wrapper -->
+<tiles:insertAttribute name="content" />
 </body>
 </html>

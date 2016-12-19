@@ -12,9 +12,9 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li><a href="#" style="color:#34495e;">법률안</a></li>
-					<li><a href="#" style="color:#34495e;">국회의원</a></li>
-					<li><a href="#" style="color:#34495e;">게시판</a></li>
+					<li><a href="statute.do" style="color:#34495e;">의안</a></li>
+					<li><a href="Member_Parliament.do" style="color:#34495e;">의원</a></li>
+					<li><a href="board.do" style="color:#34495e;">게시판</a></li>
 					<li><a href="#" style="color:#34495e;">채팅</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">

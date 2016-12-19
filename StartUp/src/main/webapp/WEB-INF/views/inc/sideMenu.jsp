@@ -3,13 +3,11 @@
 <div class="col-sm-3 sidenav">
       <h4>카테고리</h4>
       <ul class="nav nav-pills nav-stacked">
-        <li><a href="#section1">Home</a></li>
-        <li><a href="#section2">Friends</a></li>
-        <li><a href="#section3">Family</a></li>
-        <li><a href="#section3">Photos</a></li>
+        <li><a href="#section1">법률안</a></li>
+        <li><a href="#section2">국회의원</a></li>
       </ul><br>
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search Blog..">
+        <input type="text" class="form-control" placeholder="검색하실 내용을 입력하세요">
         <span class="input-group-btn">
           <button class="btn btn-default" type="button">
             <span class="glyphicon glyphicon-search"></span>
