@@ -1,7 +1,7 @@
 <!--  
 	작성자 : 박성준
 	작성일 : 2016-12-19
-	목  적 : 로그인 및 회원가입시 사용
+	목  적 : 법 관련 페이지
 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -20,14 +20,11 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="css/layout.css">
-<title>Login</title>
-<style>
-	body{
-		background-image: url("img/img1.jpg");
-	}
-</style>
+<title>법안</title>
 </head>
 <body>
+<!-- Header -->
+	<tiles:insertAttribute name="header" />
 <!-- Main Wrapper -->
 <tiles:insertAttribute name="content" />
 </body>

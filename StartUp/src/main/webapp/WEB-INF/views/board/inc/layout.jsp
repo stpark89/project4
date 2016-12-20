@@ -19,16 +19,24 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="css/layout.css">
-<title>Login</title>
-<style>
-	body{
-		background-image: url("img/img1.jpg");
-	}
-</style>
+<link rel="stylesheet" href="css/board_layout.css">
+<title>게시판</title>
 </head>
 <body>
-<!-- Main Wrapper -->
-<tiles:insertAttribute name="content" />
+<div class="container-fluid">
+  <div class="row content">
+	<!-- Header -->
+	<tiles:insertAttribute name="header" />
+	
+	<tiles:insertAttribute name="sidebar"/>
+
+	<!-- Main Wrapper -->
+	<tiles:insertAttribute name="content" />
+	<!--풋터-->
+	</div>
+</div>
+
+<tiles:insertAttribute name="footer" />
+
 </body>
 </html>
