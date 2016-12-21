@@ -43,29 +43,6 @@
 		</div>
 	</nav>
 	<div class="container-fluid">
-<!-- 		<div class="jumbotron text-center" align="center"
-			style="width: 100%; height: 300px; background-image:url('img/gom.png'); background-color: white; opacity: 0.6; position: relative; padding: 20px;">
-			<form class="form-horizontal" method="post"
-				action="AutoCompleteController">
-				<div class="form-group">
-					<div class="col-sm-4"></div>
-					<div class="col-sm-4">
-					<br/><br/><br/><br/><br/><br/>
-					<div class="form-group">
-							<div class="input-group">
-								<input type="text" class="form-control">
-									<span class="input-group-btn">
-										 <a href="#" class="btn btn-primary btn-md">
-								          <span class="glyphicon glyphicon-zoom-in"></span>
-								        </a>
-									</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-4"></div>
-				</div>
-			</form>
- -->		
  		 <div class="jumbotron text-center" style="width: 100%; height: 300px; background-image:url('img/gom.png'); background-color: white; opacity: 0.6; position: relative; padding: 20px;">
 			  <h1>깨어있는 대한민국</h1> 
 			  <form class="form-inline">

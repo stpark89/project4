@@ -19,18 +19,22 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/board_layout.css">
+<script src="js/ParliamentJs.js"></script>
 <title>의원</title>
 </head>
 <body>
-
+<div class="container-fluid">
+  <div class="row content">
 	<!-- Header -->
 	<tiles:insertAttribute name="header" />
 	
 	<!-- Main Wrapper -->
 	<tiles:insertAttribute name="content" />
-	<!--풋터-->
-	<tiles:insertAttribute name="footer" />
 	
+	</div>
+</div>
+<!--풋터-->
+	<tiles:insertAttribute name="footer" />
 </body>
 </html>

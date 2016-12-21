@@ -1,4 +1,5 @@
 @CHARSET "UTF-8";
+html,body { height: 100%; margin: 0; padding: 0; }
 
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
@@ -16,6 +17,10 @@
 footer {
 	background-color: #f2f2f2;
 	padding: 25px;
+	margin-top:-1.9em;
+	height:1.9em;
+	position: absolute;
+	
 }
 
 /* Hide the carousel text when the screen is less than 600 pixels wide */
@@ -30,3 +35,7 @@ footer {
 	margin-right: auto;
 	margin-left: auto;
 }
+#ParliaDiv{
+	min-height: 100%;
+}
+
