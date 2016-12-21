@@ -39,3 +39,14 @@ footer {
 	min-height: 100%;
 }
 
+
+/*법안 관련 테이블 css*/
+.statueTableTr th{
+	
+	text-align: center;
+}
+
+.statueTableResultTr td{
+	
+	text-align: center;
+}
