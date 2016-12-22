@@ -13,12 +13,12 @@
 					
 					<div class="form-group">
 						<label for="username-email">이메일</label> <input
-							name="user_id" value='' id="username-email"
+							name="id" value='' id="id"
 							placeholder="E-mail or Username" type="text" class="form-control" />
 					</div>
 					<div class="form-group">
-						<label for="password">비밀번호</label> <input name="password"
-							id="password" value='' placeholder="Password" type="password"
+						<label for="password">비밀번호</label> <input name="pw"
+							id="pw" value='' placeholder="Password" type="password"
 							class="form-control" />
 					</div>
 					<div class="form-group">

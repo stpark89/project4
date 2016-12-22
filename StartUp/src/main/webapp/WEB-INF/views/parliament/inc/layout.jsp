@@ -20,8 +20,8 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="css/board_layout.css">
-<script src="js/ParliamentJs.js"></script>
-<title>의원</title>
+<script src="js/Parliament.js"></script> 
+<title>의원정보</title>
 </head>
 <body>
 <div class="container-fluid">
