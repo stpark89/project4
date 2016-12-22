@@ -47,14 +47,14 @@
 			</form>
 			<br/><br/>
 			<table class="table hover-table">
-				<tr class="statueTableTr">
+				<tr>
 					<th>제안일</th>
 					<th>의안명</th>
 					<th>발의자</th>
 					<th>상임위원회</th>
 					<th>진행상황</th>
 				</tr>
-				<tr class="statueTableResultTr">
+				<tr>
 					<td>2016-12-10</td>
 					<td>테스트</td>
 					<td>박성준</td>

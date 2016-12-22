@@ -8,7 +8,7 @@
 		<h4>의원 검색</h4>
 		<hr/>
 		<div class="well">
-		<form action="" class="form-horizontal" id="searchForm">
+		<form action="" class="form-horizontal">
 			 <div class="form-group">
     			<label class="control-label col-sm-3" for="name">이름</label>
 	    		<div class="col-sm-8">
@@ -58,7 +58,7 @@
  			 
  			 <div class="form-group">
  			 	<div class="col-sm-offset-3 col-sm-2">
-    				<input type="submit" class="btn btn-primary" value="검색">
+    				<input type="button" id="searchBtn" class="btn btn-primary" value="검색">
     			</div>
     			<div class="col-sm-4">
     				<input type="button" class="btn btn-danger" value="검색 초기화">
