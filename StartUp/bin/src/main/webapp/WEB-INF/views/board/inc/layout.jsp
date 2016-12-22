@@ -1,7 +1,7 @@
 <!--  
 	작성자 : 박성준
 	작성일 : 2016-12-19
-	목  적 : 국회의원 정보 보는 페이지
+	목  적 : 로그인 및 회원가입시 사용
 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -20,9 +20,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="css/board_layout.css">
-  <script src="js/Cross.js"></script>
-<script src="js/Parliament.js"></script> 
-<title>의원정보</title>
+<title>게시판</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -30,39 +28,15 @@
 	<!-- Header -->
 	<tiles:insertAttribute name="header" />
 	
+	<tiles:insertAttribute name="sidebar"/>
+
 	<!-- Main Wrapper -->
 	<tiles:insertAttribute name="content" />
-	
+	<!--풋터-->
 	</div>
 </div>
-<!--풋터-->
-	<tiles:insertAttribute name="footer" />
-<script>
-	$(function(){
-		
-		
-		$("#searchBtn").click(function() {
-							alert("xml버튼 클릭vv!!");
-							$.ajax({		  
-										url : "http://apis.data.go.kr/9710000/NationalAssemblyInfoService/getMemberNameInfoList?ServiceKey=cuzCdknQ8EpFjg0Rw%2Fgd%2Br2TesHVExB8p3Pa5Rr0kgJUAhEyxcf9egVBUX29QGWrcq9ofcWuxOsECDRwsJXiSg%3D%3D",
-										type: "GET",
-										success : function(data) {
-										 console.log(data);
-										console.log( $(data).find("body").find("items").find("item").find("engNm"));
-										 	
-										  $(data).find("body").find("items").find("item").each(function(){
-											  alert("안도니?"+$(this).find("engNm").text());
-											  
-										  });
-										},
-										error : function(data){
-											alert("실패"+data);
-										}
-										
-									});
 
-						}); 
-	});
-</script>
+<tiles:insertAttribute name="footer" />
+
 </body>
 </html>

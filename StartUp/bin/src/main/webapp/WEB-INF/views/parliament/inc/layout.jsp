@@ -20,9 +20,8 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="css/board_layout.css">
-  <script src="js/Cross.js"></script>
-<script src="js/Parliament.js"></script> 
-<title>의원정보</title>
+<script src="js/ParliamentJs.js"></script>
+<title>의원</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -37,32 +36,5 @@
 </div>
 <!--풋터-->
 	<tiles:insertAttribute name="footer" />
-<script>
-	$(function(){
-		
-		
-		$("#searchBtn").click(function() {
-							alert("xml버튼 클릭vv!!");
-							$.ajax({		  
-										url : "http://apis.data.go.kr/9710000/NationalAssemblyInfoService/getMemberNameInfoList?ServiceKey=cuzCdknQ8EpFjg0Rw%2Fgd%2Br2TesHVExB8p3Pa5Rr0kgJUAhEyxcf9egVBUX29QGWrcq9ofcWuxOsECDRwsJXiSg%3D%3D",
-										type: "GET",
-										success : function(data) {
-										 console.log(data);
-										console.log( $(data).find("body").find("items").find("item").find("engNm"));
-										 	
-										  $(data).find("body").find("items").find("item").each(function(){
-											  alert("안도니?"+$(this).find("engNm").text());
-											  
-										  });
-										},
-										error : function(data){
-											alert("실패"+data);
-										}
-										
-									});
-
-						}); 
-	});
-</script>
 </body>
 </html>
