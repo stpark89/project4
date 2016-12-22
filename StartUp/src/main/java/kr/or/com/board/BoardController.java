@@ -12,4 +12,10 @@ public class BoardController {
 		return "board.boardIndex";
 	}
 	
+	//자유게시판
+	@RequestMapping("/FreeBoard.do")
+	public String FreeBoard(){
+		return "board.FreeBoardIndex";
+	}
+	
 }

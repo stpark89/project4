@@ -20,6 +20,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="css/board_layout.css">
+<script src="js/Board.js"></script>
 <title>게시판</title>
 </head>
 <body>
