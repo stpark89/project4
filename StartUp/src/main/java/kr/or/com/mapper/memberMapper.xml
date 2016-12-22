@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+	작성자 : 박성준
+	작성일 : 2016-12-22
+	목  적 : 회원 가입 시 사용
+ -->
+
+ <mapper namespace="kr.or.com.Member.MemberDAO">
+ 	<select id="login" resultType="kr.or.com.Member.MemberDTO" parameterType="kr.or.com.Member.MemberDTO">
+ 		select id, pw from member where id = #{id} and pw = #{pw}
+ 	</select>
+ </mapper>

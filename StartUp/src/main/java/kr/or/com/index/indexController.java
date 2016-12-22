@@ -12,10 +12,4 @@ public class indexController {
 		return "member.AddMember";
 	}
 
-	@RequestMapping("/Login.do")
-	public String login(){
-		System.out.println("로그인 컨트롤러");
-		return "member.Login";
-	}
-	
 }
