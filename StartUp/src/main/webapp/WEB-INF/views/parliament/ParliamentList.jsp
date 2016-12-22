@@ -5,7 +5,7 @@
 <div class="container-fluid">
 <div class="col-md-4"></div>
 	<div class="col-md-4">
-		<h4>의원 검색??????!!!!</h4>
+		<h4>의원 검색</h4>
 		<hr/>
 		<div class="well">
 		<form action="" class="form-horizontal">
