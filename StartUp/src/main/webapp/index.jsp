@@ -8,16 +8,14 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/index.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>StartUp</title>
-
 </head>
 <body>
-
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -36,12 +34,11 @@
 					<li><a href="#" style="color:#34495e;">채팅</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="Login.do" style="color:#34495e;"><span class="glyphicon glyphicon-log-in"></span>
-							Login</a></li>
+					<li><a href="Login.do" style="color:#34495e;"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
 				</ul>
 			</div>
 		</div>
-	</nav>
+	</nav> 
 	<div class="container-fluid">
  		 <div class="jumbotron text-center" style="width: 100%; height: 300px; background-image:url('img/gom.png'); background-color: white; opacity: 0.6; position: relative; padding: 20px;">
 			  <h1>깨어있는 대한민국</h1> 
