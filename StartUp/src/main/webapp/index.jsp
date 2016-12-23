@@ -6,85 +6,80 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="css/index.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/main.js"></script>
+<link rel="stylesheet" type="text/css" href="css/header.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
 <title>StartUp</title>
 </head>
 <body>
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#myNavbar">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#" style="color:#34495e;">Home</a>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav">
-					<li><a href="statute.do" style="color:#34495e;">의안</a></li>
-					<li><a href="Member_Parliament.do" style="color:#34495e;">의원</a></li>
-					<li><a href="board.do" style="color:#34495e;">게시판</a></li>
-					<li><a href="#" style="color:#34495e;">채팅</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<c:choose>
-						<c:when test="${id == null}">
-							<li><a href="Login.do" style="color:#34495e;"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-						</c:when>
-						<c:otherwise>
-							<li>${id}님 환영합니다</li>
-							<li><a href="LogOut.do" style="color:#34495e;"><span class="glyphicon glyphicon-log-in"></span>LogOut</a></li>
-						</c:otherwise>
-					
-					</c:choose>
-				</ul>
-			</div>
-		</div>
-	</nav> 
-	<div class="container-fluid">
- 		 <div class="jumbotron text-center" style="width: 100%; height: 300px; background-image:url('img/gom.png'); background-color: white; opacity: 0.6; position: relative; padding: 20px;">
-			  <h1>깨어있는 대한민국</h1> 
-			  <form class="form-inline">
-			    <div class="input-group">
-			      <input type="email" class="form-control" size="50" placeholder="Email Address" required>
-			      <div class="input-group-btn">
-			        <button type="button" class="btn btn-danger">Subscribe</button>
-			      </div>
-			    </div>
-			  </form>
-			</div>
- 		</div>
 
-
-	<div class="container-fluid text-center">
-		<br>
-		<div class="row">
-			<div class="col-sm-3" >
-					<i class="material-icons" style="font-size:250px;color:#34495e;text-shadow:2px 2px 4px #000000;">cloud</i>
-			</div>
-			<div class="col-sm-3">
-				<i class="material-icons" style="font-size:250px;color:#34495e;text-shadow:2px 2px 4px #000000;">cloud</i>
-			</div>
-			<div class="col-sm-3">
-				<i class="material-icons" style="font-size:250px;color:#34495e;text-shadow:2px 2px 4px #000000;">computer</i>
-			</div>
-			<div class="col-sm-3">
-				<i class="material-icons" style="font-size:250px;color:#34495e;text-shadow:2px 2px 4px #000000;">cloud</i>
-			</div>
-		</div>
+<nav id="nav">
+	<h1><a href="/com/index.jsp">Title</a></h1>
+	<ul id="mainMenu">
+		<li><a href="#" class="fdMenu">의안</a></li>
+		<li><a href="#" class="fdMenu">의원</a></li>
+		<li><a href="board.do">게시판</a></li>
+		<li><a href="#">채팅</a></li>
+	</ul>
+	<div>
+		<c:choose>
+			<c:when test="${id == null}">
+				<a href="Login.do"><i
+						class="fa fa-sign-in" aria-hidden="true"></i> 로그인</a>
+			</c:when>
+			<c:otherwise>
+				<a href="LogOut.do">${id}님환영합니다</a>
+			</c:otherwise>
+		</c:choose>
 	</div>
-	<br>
+</nav>
 
-	<footer class="container-fluid text-center">
-		<p>풋터</p>
-	</footer>
+	<section id="banner">
+    	<div>
+            <h2>대한민국 헌법 1조 1항</h2>
+            <p>대한민국은 민주공화국이다.</p>
+        </div>
+        <div>
+            <input type="text" /><!--
+            --><button>검색</button>
+        </div>
+    </section>
+	
+	 <section id="statute">
+    	<div>
+            <h2 class="hTitle">의안이란?</h2>
+            <p class="pContent">국회는 법률안·예산안·동의안 등의 심의를 통하여 헌법이 요구하는 국회의 기능을 수행하고<br/>  
+            국민의 의사를 국정에 반영하게 된다.<br/> 
+            이와 같이 국회에서 심의하는 법률안·예산안·동의안 등과 같은 안건을 의안이라고 부른다.</p> 
+            <button class="btn" id="statuteBtn"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> 상세보기</button>
+        </div>
+    </section>
+    
+    <section id="parliament">
+    	<img src="img/main01.png" alt="국회마크" />
+        <div>
+            <h2 class="hTitle">20대 국회의원 총 300명 현황</h2>
+            <p class="pContent">의회에서 일하는 의원들.<br>
+            					민주공화제 및 입헌군주제를 택한 여러 나라에서 입법부를 구성하고 일하는 사람들을 일컫는다</p> 
+            <button class="btn" id="ParliamentBtn"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> 상세보기</button>
+        </div>
+    </section>
+    
+    <section id="comment">
+    	<h1>COMMENT</h1>
+        <p>관리자에서 건의하고 싶은 사항을 적어주세요.</p>
+        <div>
+        	<input type="text" placeholder="Name"/>
+            <textarea  placeholder="Comment"></textarea>
+            <button class="btn">보내기</button>
+        </div>
+    </section>
+    
+    <footer id="footer">
+    	<p>02-725-1111</p>
+    </footer>
+	
+	
 </body>
 </html>

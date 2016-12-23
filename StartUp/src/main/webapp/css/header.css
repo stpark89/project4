@@ -1,0 +1,297 @@
+@charset "utf-8";
+/* CSS Document */
+@import url(core.css);
+
+#nav {
+	position:fixed;
+	width:100%;
+	height:100px;
+	background-color:#000;
+	opacity:0.7;
+	z-index:999;
+}
+
+#nav>h1 {
+	position:absolute;
+	top:0;
+	left:50px;
+	width:auto;
+	height:100%;
+	line-height:100px;
+	font-size:50px;	
+}
+
+#nav>h1>a{
+	color:#fff;
+}
+
+#nav > div > a{
+	color:#fff;
+}
+
+#mainMenu {
+	position:absolute;
+	width:auto;
+	height:25px;
+	bottom:25px;
+	left:50%;
+	transform:translateX(-50%);
+}
+
+#mainMenu>li {
+	margin-right:100px;
+	height:100%;
+	box-sizing:border-box;
+}
+
+#mainMenu>li:hover>a {
+	border-bottom:3px solid #fff;
+}
+
+#mainMenu>li>a {
+	display:block;
+	width:100%;
+	height:100%;
+	color:#fff;	
+	font-size:20px;
+	
+}
+
+#mainMenu>li:nth-child(3) {
+	position:relative;	
+}
+
+#mainMenu>li:nth-child(3):hover #bmenu{
+	opacity:1;
+}
+ 
+#mainMenu>li:last-child {
+	margin:0;	
+}
+
+
+#nav>div {
+	position:absolute;
+	top:0;
+	right:50px;
+	color:#fff;
+	line-height:100px;
+	font-size:25px;	
+	cursor:pointer;
+}
+
+/*배너*/
+
+#banner {
+	position:relative;
+	width:100%;
+	height:100%;
+	background:url(../img/banner00.jpg) no-repeat top/cover;	
+}
+
+#banner>div:first-of-type {
+	position:absolute;
+	top:30%;
+	left:50%;
+	transform:translateX(-50%);
+	text-align:center;	
+	color:#fff;
+	line-height:80px;
+}
+
+#banner>div:first-of-type h2 {
+	width:100%;
+	font-weight:bold;
+	font-size:40px;	
+}
+
+#banner>div:first-of-type p {
+	font-size:20px;	
+}
+
+#banner div:last-of-type {
+	position:absolute;
+	bottom:30%;
+	left:50%;
+	width:500px;
+	height:50px;
+	transform:translateX(-50%);	
+	font-size:25px;
+	opacity:0.8;
+}
+
+#banner div:last-of-type input {
+	width:80%;
+	height:100%;
+	border:1px solid #ccc;
+	padding:10px;
+	box-sizing:border-box;	
+	font-family:Nanum;
+	font-size:20px;
+	border-radius:5px 0 0 5px;
+	
+}
+
+#banner div:last-of-type button {
+	width:20%;
+	height:100%;
+	border:0;
+	background-color:#000;
+	color:#fff;
+	font-size:20px;
+	font-family:Nanum;
+	box-sizing:border-box;	
+	border-radius:0 5px 5px 0;
+	cursor:pointer;
+}
+
+
+/*의안 영역*/
+
+#statute {
+	position:relative;
+	width:100%;
+	height:100%;
+	background:url(../img/law.jpg) no-repeat top/cover;
+}
+
+#statute>div {
+	position:absolute;
+	top:50%;
+	right:100px;
+	transform:translateY(-50%);	
+	text-align:right;
+}
+
+.hTitle {
+	position:relative;
+	font-weight:bold;
+	font-size:50px;	
+	margin-bottom:50px;
+}
+
+.pContent {
+	position:relative;
+	font-size:20px;
+	line-height:30px;
+	margin-bottom:50px;	
+}
+
+.btn {
+	position:relative;
+	width:200px;
+	height:70px;
+	background-color:#000;
+	color:#fff;
+	border:0;
+	border-radius:10px;
+	font-size:30px;	
+	cursor:pointer;
+}
+
+#parliament {
+	position:relative;
+	width:100%;
+	height:100%;
+	background-color:#eee;
+}
+
+#parliament>img {
+	position:absolute;
+	top:50%;
+	right:5%;
+	width:30%;
+	transform:translateY(-50%);	
+}
+
+#parliament>div {
+	position:absolute;
+	top:50%;
+	left:100px;
+	transform:translateY(-50%);	
+	text-align:left;
+}
+
+#comment {
+	position:relative;
+	width:100%;
+	height:100%;
+}
+
+#comment>h1 {
+	position:relative;
+	width:100%;
+	height:250px;
+	text-align:center;
+	font-weight:bold;
+	line-height:350px;
+	font-size:40px;
+	
+}
+
+#comment>p {
+	position:relative;
+	width:100%;
+	text-align:center;
+	margin-bottom:50px;
+}
+
+#comment div {
+	position:relative;
+	width:50%;
+	margin:0 auto;	
+	text-align:center;
+}
+
+#comment div input {
+	width:100%;
+	height:50px;	
+	padding:10px;
+	box-sizing:border-box;
+	font-size:15px;
+	border-radius:5px;
+	border:1px solid #ccc;
+	margin-bottom:20px;
+	font-family:Nanum;
+}
+
+#comment div textarea {
+	width:100%;
+	height:200px;	
+	padding:10px;
+	box-sizing:border-box;
+	font-size:15px;
+	font-family:Nanum;
+	border-radius:5px;
+	border:1px solid #ccc;
+	margin-bottom:20px;
+}
+
+#comment div button {
+	width:100% !important;
+	font-size:25px;
+}
+
+
+/*푸터*/
+
+#footer {
+	position:relative;
+	width:100%;
+	height:150px;	
+	background-color:#333;
+}
+
+#footer p {
+	position:relative;
+	width:100%;
+	height:100%;
+	text-align:center;
+	color:#fff;
+	line-height:150px;	
+}
+@media only screen and (max-width:1024px) {
+	#mainMenu {
+		display:none;	
+	}
+}

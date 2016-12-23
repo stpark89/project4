@@ -2,10 +2,9 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
 <tiles-definitions>
-   <definition name="home.*" template="/WEB-INF/views/inc/layout.jsp">
+   <definition name="com.*" template="/WEB-INF/views/inc/layout.jsp">
       <put-attribute name="header" value="/WEB-INF/views/inc/header.jsp" />
       <put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp" />
-      <put-attribute name="sidebar" value="/WEB-INF/views/inc/sidebar.jsp" />
       <put-attribute name="content" value="/WEB-INF/views/{1}.jsp" />
    </definition>
 
