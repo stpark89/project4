@@ -1,7 +1,10 @@
 package kr.or.com.board;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -22,7 +25,10 @@ public class BoardController {
 	
 	//자유게시판
 	@RequestMapping("/FreeBoard.do")
-	public String FreeBoard(){
+	public String FreeBoard(Model model){
+		
+		List<FreeBoardDTO> list = free_Service.selectBoard();
+		model.addAttribute("list",list);
 		return "board.FreeBoardIndex";
 	}
 	
@@ -35,8 +41,12 @@ public class BoardController {
 	@RequestMapping(value="/FreeBoardWrite.do", method=RequestMethod.POST)
 	public String FreeBoardWriteResult(FreeBoardDTO dto){
 		
-		free_Service.writeBoard(dto);
+		String result = free_Service.writeBoard(dto);
+		if(result.equals("성공")){
+			return "redirect:FreeBoard.do";
+		}else{
+			return "FreeBoard.do";
+		}
 		
-		return "board.FreeBoardWrite";
 	}
 }

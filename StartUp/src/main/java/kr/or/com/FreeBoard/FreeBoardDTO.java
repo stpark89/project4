@@ -5,8 +5,18 @@ public class FreeBoardDTO {
 	private int bno;
 	private String title;
 	private String writer;
+	private String content;
 	private String regdate;
 	private int viewcnt;
+	
+	
+	
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
 	public int getBno() {
 		return bno;
 	}
@@ -40,8 +50,10 @@ public class FreeBoardDTO {
 	
 	@Override
 	public String toString() {
-		return "FreeBoardDTO [bno=" + bno + ", title=" + title + ", writer=" + writer + ", regdate=" + regdate
-				+ ", viewcnt=" + viewcnt + "]";
+		return "FreeBoardDTO [bno=" + bno + ", title=" + title + ", writer=" + writer + ", content=" + content
+				+ ", regdate=" + regdate + ", viewcnt=" + viewcnt + "]";
 	}
+	
+	
 	
 }

@@ -6,6 +6,7 @@
 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <div class="col-sm-8 text-center">
 	<h3>자유 게시판</h3>
 	<hr/>
@@ -27,13 +28,15 @@
 			<th class="text-center">작성일</th>
 			<th class="text-center">조회수</th>
 		</tr>
+		<c:forEach var="list" items="${list}">
 		<tr>
-			<td>1</td>
-			<td>안녕하세요</td>
-			<td>박성준</td>
-			<td>2016-12-22</td>
-			<td>0</td>
+			<td>${list.bno}</td>
+			<td>${list.title}</td>
+			<td>${list.writer}</td>
+			<td>${list.regdate}</td>
+			<td>${list.viewcnt}</td>
 		</tr>
+		</c:forEach>
 	</table>	
 	
 	<div class="form-group col-sm-offset-11 col-sm-1">

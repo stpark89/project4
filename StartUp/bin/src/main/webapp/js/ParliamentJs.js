@@ -32,7 +32,7 @@ $(function(){
 		//이름
 		var name = $(this).prev().prev().children().text();
 		console.log(jung + " ////  "+name);
-		
+		alert("이건뭐지");
 	});
 	
 });

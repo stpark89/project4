@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+	작성자 : 박성준
+	작성일 : 2016-12-23
+	목  적 : 자유게시판 이용시 사용
+ -->
+<mapper namespace="kr.or.com.FreeBoard.FreeBoardDAO">
+
+	<select id="selectFreeBoard" resultType="kr.or.com.FreeBoard.FreeBoardDTO">
+		select bno, title, content, writer, regdate, viewcnt from tbl_Free_Board
+	</select>
+
+	 <insert id="FreeBoardWrite" parameterType="kr.or.com.FreeBoard.FreeBoardDTO">
+		insert into tbl_Free_Board(bno, title, content, writer, regdate, viewcnt) 
+		values(FreeBoard_seq_bno.nextval, #{title}, #{content}, #{writer}, #{regdate}, 0)
+	 </insert>
+
+</mapper>	 
+ 
