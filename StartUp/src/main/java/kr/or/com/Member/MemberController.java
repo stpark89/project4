@@ -57,7 +57,6 @@ public class MemberController {
 	//아이디 중복확인
 	@RequestMapping("/checkId.do")
 	public View checkId(String id, Model model){
-		System.out.println("아이디 :"+id);
 		String result = service.checkId(id);
 		if(result==null ||result ==""){
 			model.addAttribute("msg", "사용가능한 아이디입니다");

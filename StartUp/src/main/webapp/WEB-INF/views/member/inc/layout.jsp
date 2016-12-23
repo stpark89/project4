@@ -20,7 +20,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="css/layout.css">
-<script src="js/AddMember.js"></script>
+<script src="js/AddMember2.js"></script>
 <title>Login</title>
 <style>
 	body{
