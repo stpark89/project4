@@ -17,6 +17,7 @@ public class BoardController {
 	@Autowired
 	FreeBoardService free_Service;
 	
+	//게시판 관련 
 	@RequestMapping("/board.do")
 	public String board(){
 		System.out.println("게시판");
@@ -38,6 +39,7 @@ public class BoardController {
 		return "board.FreeBoardWrite";
 	}
 	
+	//자유게시판 글쓰기 submit 할때
 	@RequestMapping(value="/FreeBoardWrite.do", method=RequestMethod.POST)
 	public String FreeBoardWriteResult(FreeBoardDTO dto){
 		
@@ -47,6 +49,23 @@ public class BoardController {
 		}else{
 			return "FreeBoard.do";
 		}
+	}
+	
+
+	//게시판 상세보기
+	@RequestMapping("FreeBoardDetail.do")
+	public String FreeBoardDetail(String bno, Model model){
+		System.out.println("넘어온 글번호 : "+bno);
+		FreeBoardDTO dto=free_Service.selectDetail(bno);
+		
+		if(dto.getTitle().equals("") || dto.getTitle() != null){
+			model.addAttribute("dto", dto);
+			return "board.FreeBoardDetail";
+		}else{
+			return null;
+		}
+		
 		
 	}
+	
 }

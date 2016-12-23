@@ -69,11 +69,13 @@
     <section id="comment">
     	<h1>COMMENT</h1>
         <p>관리자에서 건의하고 싶은 사항을 적어주세요.</p>
-        <div>
-        	<input type="text" placeholder="Name"/>
-            <textarea  placeholder="Comment"></textarea>
-            <button class="btn">보내기</button>
-        </div>
+        <form>
+	        <div>
+	        	<input type="text" placeholder="Name" name="people"/>
+	            <textarea  placeholder="Comment" name="comment"></textarea>
+	            <button class="btn" id="sendCommentBtn">보내기</button>
+	        </div>
+        </form>
     </section>
     
     <footer id="footer">
