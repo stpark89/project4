@@ -16,7 +16,9 @@ public class MemberController {
 	@Autowired
 	private MemberService service;
 	
-
+	@Autowired
+	private View jsonview;
+	
 	@RequestMapping(value="/Login.do", method=RequestMethod.GET)
 	public String login(){
 		System.out.println("로그인 컨트롤러");
@@ -52,7 +54,7 @@ public class MemberController {
 		return "member.AddMember";
 	}
 	
-/*	//아이디 중복확인
+	//아이디 중복확인
 	@RequestMapping("/checkId.do")
 	public View checkId(String id, Model model){
 		System.out.println("아이디 :"+id);
@@ -64,7 +66,7 @@ public class MemberController {
 		}
 		
 		return jsonview;
-	}*/
+	}
 	
 	//회원가입 버튼 클릭시
 	@RequestMapping("/addMemberResult.do")
