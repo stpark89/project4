@@ -8,4 +8,6 @@ public interface MemberDAO {
 	//회원가입
 	public int AddMember(MemberDTO dto);
 	
+	//회원가입시 아이디 중복확인
+	public String checkId(String id);
 }

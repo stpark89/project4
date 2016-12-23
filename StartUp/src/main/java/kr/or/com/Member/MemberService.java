@@ -30,6 +30,19 @@ public class MemberService {
 		}
 	}
 	
+	//회원가입시 아이디 중복확인
+	public String checkId(String id){
+		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
+		String result = dao.checkId(id);
+		return result;
+	}
 	
+	//회원가입
+	public int AddMember(MemberDTO dto){
+		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
+		int result = dao.AddMember(dto);
+		return result;
+		
+	}
 	
 }
