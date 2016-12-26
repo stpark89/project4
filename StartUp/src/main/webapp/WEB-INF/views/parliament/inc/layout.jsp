@@ -15,12 +15,12 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">	
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/subHeader.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script src="js/Cross.js"></script>
 <script src="js/Parliament2.js"></script> 
 <title>의원정보</title>
@@ -38,11 +38,26 @@
 </div>
 <!--풋터-->
 	<tiles:insertAttribute name="footer" />
+	
+	<a id="a" href="http://apis.data.go.kr/9710000/NationalAssemblyInfoService/getMemberNameInfoList?ServiceKey=cuzCdknQ8EpFjg0Rw%2Fgd%2Br2TesHVExB8p3Pa5Rr0kgJUAhEyxcf9egVBUX29QGWrcq9ofcWuxOsECDRwsJXiSg%3D%3D">보러가기</a>
+	
 <script>
+	
 	$(function(){
+		   
+		//var g = "https://ajax.googleapis.com/ajax/services/feed/load?v=2.0&num=10&callback=?&q=";		
+		//console.log(g+"http://apis.data.go.kr/9710000/NationalAssemblyInfoService/getMemberNameInfoList?ServiceKey=cuzCdknQ8EpFjg0Rw%2Fgd%2Br2TesHVExB8p3Pa5Rr0kgJUAhEyxcf9egVBUX29QGWrcq9ofcWuxOsECDRwsJXiSg%3D%3D");
+		$('#searchBtn').click(function(){
+			$.ajax({
+				url: "XmlParse.do",
+				dataType:"json",
+				success : function(data){
+					alert("성공");
+				}
+			});
+		});
 		
-		
-		$("#searchBtn").click(function() {
+/* 		$("#searchBtn").click(function() {
 							alert("xml버튼 클릭vv!!");
 							$.ajax({		  
 										url : "http://apis.data.go.kr/9710000/NationalAssemblyInfoService/getMemberNameInfoList?ServiceKey=cuzCdknQ8EpFjg0Rw%2Fgd%2Br2TesHVExB8p3Pa5Rr0kgJUAhEyxcf9egVBUX29QGWrcq9ofcWuxOsECDRwsJXiSg%3D%3D",
@@ -62,7 +77,7 @@
 										
 									});
 
-						}); 
+						});  */
 	});
 </script>
 </body>
