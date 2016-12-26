@@ -43,26 +43,36 @@
 		
 		
 		$("#searchBtn").click(function() {
-							alert("xml버튼 클릭vv!!");
-							$.ajax({		  
-										url : "http://apis.data.go.kr/9710000/NationalAssemblyInfoService/getMemberNameInfoList?ServiceKey=cuzCdknQ8EpFjg0Rw%2Fgd%2Br2TesHVExB8p3Pa5Rr0kgJUAhEyxcf9egVBUX29QGWrcq9ofcWuxOsECDRwsJXiSg%3D%3D",
-										type: "GET",
-										success : function(data) {
-										 console.log(data);
-										console.log( $(data).find("body").find("items").find("item").find("engNm"));
-										 	
-										  $(data).find("body").find("items").find("item").each(function(){
-											  alert("안도니?"+$(this).find("engNm").text());
-											  
-										  });
-										},
-										error : function(data){
-											alert("실패"+data);
-										}
-										
-									});
+			alert("xml버튼 클릭vv!!");
+			var empNm = $('#empNm').val();
+			var polyNm =$('#polyNm').val();
+			var sharNm =$('#sharNm').val();
+			var reeleGbnNm=$('#reeleGbnNm').val();
+			var origNm =$('#origNm').val();
+			alert(empNm +" / "+polyNm +" / "+sharNm+" / "+reeleGbnNm+" / "+origNm);
+			
+			
+			
+			
+			$.ajax({		  
+						url : "http://apis.data.go.kr/9710000/NationalAssemblyInfoService/getMemberNameInfoList?ServiceKey=cuzCdknQ8EpFjg0Rw%2Fgd%2Br2TesHVExB8p3Pa5Rr0kgJUAhEyxcf9egVBUX29QGWrcq9ofcWuxOsECDRwsJXiSg%3D%3D",
+						type: "GET",
+						success : function(data) {
+						 console.log(data);
+						console.log( $(data).find("body").find("items").find("item").find("engNm"));
+						 	
+						  $(data).find("body").find("items").find("item").each(function(){
+							  alert("안도니?"+$(this).find("engNm").text());
+							  
+						  });
+						},
+						error : function(data){
+							alert("실패"+data);
+						}
+						
+					});
 
-						}); 
+		}); 
 	});
 </script>
 </body>
