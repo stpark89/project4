@@ -53,6 +53,7 @@ public class FreeBoardService {
 		FreeBoardDAO dao = sqlSession.getMapper(FreeBoardDAO.class);
 		
 		try{
+			dao.updateCnt(bno);
 			dto = dao.FreeBoardDetail(bno);
 		}catch(Exception e){
 			e.printStackTrace();

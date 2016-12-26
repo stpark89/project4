@@ -7,6 +7,7 @@
 		<li><a href="statute.do">의안</a></li>
 		<li><a href="Member_Parliament.do">의원</a></li>
 		<li><a href="board.do">게시판</a></li>
+		<li><a href="NoticeIndex.do">공지사항/QNA</a></li>
 		<li><a href="#">채팅</a></li>
 	</ul>
 	<div>

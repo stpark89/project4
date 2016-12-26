@@ -28,6 +28,6 @@
 	<tiles:insertAttribute name="header" />
 	<br><br><br>
 <!-- Main Wrapper -->
-<tiles:insertAttribute name="content" />
+	<tiles:insertAttribute name="content" />
 </body>
 </html>

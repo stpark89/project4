@@ -12,4 +12,9 @@ public interface FreeBoardDAO {
 	
 	//자유게시판 상세 글보기
 	public FreeBoardDTO FreeBoardDetail(String bno);
+	
+	//자유게시판 상세보기 클릭시 조회수 증가
+	public int updateCnt(String bno);
+	
+	
 }

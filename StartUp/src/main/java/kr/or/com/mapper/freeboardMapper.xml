@@ -12,18 +12,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="selectFreeBoard" resultType="kr.or.com.FreeBoard.FreeBoardDTO">
 		select bno, title, content, writer, regdate, viewcnt from tbl_Free_Board
+		order by bno desc
 	</select>
-
+	
 	 <insert id="FreeBoardWrite" parameterType="kr.or.com.FreeBoard.FreeBoardDTO">
 		insert into tbl_Free_Board(bno, title, content, writer, regdate, viewcnt) 
 		values(FreeBoard_seq_bno.nextval, #{title}, #{content}, #{writer}, #{regdate}, 0)
 	 </insert>
 
-	
+	<!--상세보기-->
 	 <select id="FreeBoardDetail" resultType="kr.or.com.FreeBoard.FreeBoardDTO">
 	 	select bno, title, content, writer, regdate, viewcnt from tbl_Free_Board
 	 	where bno = #{bno}
 	 </select>
+
+
+	<!--조회수-->
+	<update id="updateCnt" parameterType="String">
+	    update tbl_Free_Board set viewcnt = NVL(viewcnt, 0) + 1 
+	    where bno = #{bno}
+	</update>
 
 </mapper>	 
  
