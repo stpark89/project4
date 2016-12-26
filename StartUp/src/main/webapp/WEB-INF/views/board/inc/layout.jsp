@@ -20,25 +20,21 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/subHeader.css">
+<link rel="stylesheet" type="text/css" href="css/board.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="js/FreeBoard.js"></script>
+<script type="text/javascript" src="js/BoardTemplate.js"></script>
+
 <title>게시판</title>
 </head>
 <body>
-<div class="container-fluid">
-  <div class="row content">
+
 	<!-- Header -->
 	<tiles:insertAttribute name="header" />
-	<br/><br/><br/>
-	<tiles:insertAttribute name="sidebar"/>
-
 	<!-- Main Wrapper -->
 	<tiles:insertAttribute name="content" />
 	<!--풋터-->
-	</div>
-</div>
-
-<tiles:insertAttribute name="footer" />
+	<tiles:insertAttribute name="footer" />
 
 </body>
 </html>
