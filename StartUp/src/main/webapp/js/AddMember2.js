@@ -1,7 +1,7 @@
 /**
  * 회원가입 및 로그인 관련 스크립트
  */
-
+var idCheck = 0;
 $(function(){
 	$('#addMemberBtn').click(function(){
 		if($('#id').val()==''){
@@ -25,8 +25,13 @@ $(function(){
 			$('#gender').focus();
 			return false;
 		}else{
-			alert('성공');
-		    return true;
+			if(idCheck == 1){
+				alert('성공');
+			    return true;
+			}else{
+				alert("ID 중복체크를 해주세요 !");
+				return false;
+			}
 		}
 	});
 	
@@ -40,6 +45,7 @@ $(function(){
 							    id:$('#id').val()
 						     },
 						success:function(data){
+							idCheck = 1;
 							alert(data.msg);
 						}     
 					}
