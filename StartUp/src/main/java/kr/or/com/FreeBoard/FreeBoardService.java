@@ -45,4 +45,19 @@ public class FreeBoardService {
 		}
 		return result;
 	}
+	
+	//자유게시판 상세 글보기
+	public FreeBoardDTO selectDetail(String bno){
+		
+		FreeBoardDTO dto = null;
+		FreeBoardDAO dao = sqlSession.getMapper(FreeBoardDAO.class);
+		
+		try{
+			dto = dao.FreeBoardDetail(bno);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return dto;
+	}
+	
 }

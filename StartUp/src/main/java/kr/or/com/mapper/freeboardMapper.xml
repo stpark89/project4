@@ -19,5 +19,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		values(FreeBoard_seq_bno.nextval, #{title}, #{content}, #{writer}, #{regdate}, 0)
 	 </insert>
 
+	
+	 <select id="FreeBoardDetail" resultType="kr.or.com.FreeBoard.FreeBoardDTO">
+	 	select bno, title, content, writer, regdate, viewcnt from tbl_Free_Board
+	 	where bno = #{bno}
+	 </select>
+
 </mapper>	 
  
