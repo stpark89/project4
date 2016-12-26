@@ -60,5 +60,27 @@ $(document).ready(function(e) {
 	});
 	
 	
+	//코멘트 보내기
+	$('#sendCommentBtn').click(function(){
+		var title = $('#title').val();
+		var comment = $('textarea#comment').val();
+		var admin = $('#masterHidden').val();
+		alert("입력하신 제목 : "+title + " comment : "+comment);
+		$.ajax(
+				{
+					url:"indexComment.do",
+					data : {
+						title : title,
+						comment : comment,
+						admin : admin
+					},
+					success : function(data){
+						alert(data.data);
+					},error : function(){
+						alert("실패 하였습니다.")
+					}
+				}
+			  );
+	});
 	
 });

@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="js/jquery-3.1.1.min.js"></script>
-<script src="js/main.js"></script>
+<script src="js/main2.js"></script>
 <link rel="stylesheet" type="text/css" href="css/header.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
 <title>StartUp</title>
@@ -69,13 +69,14 @@
     <section id="comment">
     	<h1>COMMENT</h1>
         <p>관리자에서 건의하고 싶은 사항을 적어주세요.</p>
-        <form>
+        
 	        <div>
-	        	<input type="text" placeholder="Name" name="people"/>
-	            <textarea  placeholder="Comment" name="comment"></textarea>
+	        	<input type="hidden" id="masterHidden" value="admin">
+	        	<input type="text" placeholder="title" name="title" id="title"/>
+	            <textarea  placeholder="Comment" name="comment" id="comment"></textarea>
 	            <button class="btn" id="sendCommentBtn">보내기</button>
 	        </div>
-        </form>
+        
     </section>
     
     <footer id="footer">

@@ -5,7 +5,12 @@
 <div class="container text-center">
 	<div class="row">
 		<div class="page-header">
-			<h2>Login</h2>
+			<div class="col-sm-2 text-left">
+				Back
+			</div>
+			<div class="col-sm-4">
+				<h2>Login</h2>
+			</div>
 		</div>
 		<div class="col-md-offset-4 col-md-4">
 			<div class="login-box well" style="opacity: 0.8; background-color: white;">

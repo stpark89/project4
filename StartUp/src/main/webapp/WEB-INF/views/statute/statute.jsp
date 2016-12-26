@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="col-sm-offset-4 col-sm-4 text-center">
 			<h2>20대 국회 접수의안 총 <span style="color: blue;">${1000}</span> 개</h2>
-			<hr/>
+			<br/>
 			<h3>의안이란?</h3>
 			<p>국회는 법률안·예산안·동의안 등의 심의를 통하여 헌법이 요구하는 국회의 기능을 수행하고 국민의 의사를 국정에 반영하게 된다.<br/> 
 			이와 같이 국회에서 심의하는 법률안·예산안·동의안 등과 같은 안건을 의안이라고 부른다.</p> 
@@ -13,7 +13,7 @@
 	</div>
 	
 	<hr/>
-	
+	<br/><br/>
 	<div class="row">
 		
 		<div class="col-sm-offset-2 col-sm-8">
