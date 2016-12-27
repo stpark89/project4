@@ -86,6 +86,7 @@ $(function(){
 	
 	//공지사항 글쓰기버튼 클릭시
 	$('#writeNotice').click(function(){
+		alert('클릭');
 		location.href="WriteNotice.do";
 	});
 	
