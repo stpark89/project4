@@ -10,16 +10,16 @@
 		<div class="well">
 		<form action="" class="form-horizontal">
 			 <div class="form-group">
-    			<label class="control-label col-sm-3" for="name">이름</label>
+    			<label class="control-label col-sm-3" for="empNm">이름</label>
 	    		<div class="col-sm-8">
-	      			<input type="text" class="form-control" id="name" placeholder="이름을 입력하세요">
+	      			<input type="text" class="form-control" id="empNm" placeholder="이름을 입력하세요">
 	    		</div>
  			 </div>
 		
 			 <div class="form-group">
-    			<label class="control-label col-sm-3" for="email">정당</label>
+    			<label class="control-label col-sm-3" for="polyNm">정당</label>
 	    		<div class="col-sm-8">
-	      			<select class="form-control" id="">
+	      			<select class="form-control" id="polyNm">
 	      				<option>전체</option>
 	      				<option>민주당</option>
 	      			</select>
@@ -27,9 +27,9 @@
  			 </div>
  			 
  			 <div class="form-group">
-    			<label class="control-label col-sm-3" for="email">소속 위원회</label>
+    			<label class="control-label col-sm-3" for="sharNm">소속 위원회</label>
 	    		<div class="col-sm-8">
-	      			<select class="form-control">
+	      			<select class="form-control" id="sharNm">
 	      				<option>전체</option>
 	      				<option>뭔데</option>
 	      			</select>
@@ -37,9 +37,9 @@
  			 </div>
  			 
  			 <div class="form-group">
-    			<label class="control-label col-sm-3" for="email">당선 회수</label>
+    			<label class="control-label col-sm-3" for="reeleGbnNm">당선 회수</label>
 	    		<div class="col-sm-8">
-	      			<select class="form-control">
+	      			<select class="form-control" id="reeleGbnNm">
 	      				<option>전체</option>
 	      				<option>초선</option>
 	      			</select>
@@ -47,9 +47,9 @@
  			 </div>
  			 
  			  <div class="form-group">
-    			<label class="control-label col-sm-3" for="email">지역</label>
+    			<label class="control-label col-sm-3" for="origNm">선거구</label>
 	    		<div class="col-sm-8">
-	      			<select class="form-control" id="location">
+	      			<select class="form-control" id="origNm">
 	      				<option value="all">전체</option>
 	      				<option value="seoul">서울</option>
 	      			</select>

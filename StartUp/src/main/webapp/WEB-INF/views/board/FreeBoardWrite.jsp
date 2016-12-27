@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<div class="col-sm-8">
-    
-    <div class="well">
+	
+
+<div class="container">	
+	<br/><br/><br/>
+	<div class="well">
     	
     	<h4 class="col-sm-offset-1">자유게시판 글쓰기</h4>
     	<hr/>
@@ -36,4 +38,4 @@
     
     </div>
     
-</div>    
+</div>

@@ -21,15 +21,15 @@
 			<form class="form-inline">
 			  <div class="form-group">
 			    <label for="statuteName">의안명</label>
-			    <input type="email" class="form-control" id="statuteName">&nbsp;&nbsp;
+			    <input type="text" class="form-control" id="statuteName">&nbsp;&nbsp;
 			  </div>
 			  <div class="form-group">
 			    <label for="statutePeople">발의자 </label>
 			    <input type="text" class="form-control" id="statutePeople">&nbsp;&nbsp;
 			  </div>
 			  <div class="form-group">
-			    <label for="">위원회 </label>
-			    <input type="text" class="form-control" id="">&nbsp;&nbsp;
+			    <label for="committee">위원회 </label>
+			    <input type="text" class="form-control" id="committee">&nbsp;&nbsp;
 			  </div>
 			  
 			  <div class="form-group">
@@ -43,7 +43,7 @@
 			  		<option>폐기</option>
 			  	</select>
 			  </div>
-			  <button type="submit" class="btn btn-primary">검색</button>
+			  <button type="button" id="searchStatuteBtn" class="btn btn-primary">검색</button>
 			</form>
 			<br/><br/>
 			<table class="table hover-table">
