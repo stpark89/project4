@@ -204,8 +204,13 @@
         	<artifactId>xmlpull-xpp3</artifactId>
     	    <version>3.0.0.20130526</version>
   	  	</dependency>
-  
-		
+  		
+  		<!--xml 을 json 으로 변환할 때 쓰는 것.-->
+		<dependency>
+       <groupId>xom</groupId>
+       <artifactId>xom</artifactId>
+       <version>1.2.5</version>
+     	</dependency>
 	</dependencies>
     <build>
         <plugins>
