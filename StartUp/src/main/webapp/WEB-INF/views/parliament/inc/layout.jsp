@@ -43,9 +43,26 @@
 		var deptCd = $($obj).prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().attr("id");
 		location.href="PaliamentDetail.do?num="+num+"&dept_cd="+deptCd+"&img="+img;
 	}
-	
 
-	
+	//정당 전역변수
+	var jungdangName = '';
+ 	//정당 뽑아오는 함수
+ 	function jungDang(deptcd,num){
+ 		jungdangName = '';
+		$.ajax({
+			url : "PaliamentJungDang.do",
+			data : {
+				dept_cd : deptcd,
+				num : num
+			},
+			async:false,
+			success : function(data){
+				jungdangName = $(data.jungDang).find("item").find("polyNm").text();
+			}
+		}); 
+		return jungdangName;
+	}
+	 
 	$(function(){
 		//상세보기 실질적 데이터 받아옴
 		if($('#tid').val() == '1'){
@@ -60,27 +77,31 @@
 				success : function(data){
 					$('#detailPaliamentDiv').empty();
 					
+					var div = "<div class='row'><div class='well col-sm-4'>";
+					div += '<img style="width:100px; height:100px;" src='+data.detailImg+'><br/>';
+					div += "</div>";
+					div += "<div class='col-sm-8'><table class='table'>";
+					div += "<tr><td>정당 </td><td><span>"+data.detail.body.item.polyNm+"</span></td></tr>";
+					div += "<tr><td>당선 횟수</td><td><span>"+data.detail.body.item.electionNum+"</span></td></tr>";
+					div += "<tr><td>소속 위원회</td><td><span>"+data.detail.body.item.shrtNm+"</span></td></tr>";
+					if(data.detail.body.item.memTitle != null || data.detail.body.item.memTitle !== undefined){
+						div += "<tr><td>학력 </td><td><span>"+data.detail.body.item.memTitle.replace(/\r-/gi,"<br/>○")+"</span></td></tr>";
+					}
+					div += "<tr><td>전화번호 </td><td><span>"+data.detail.body.item.assemTel+"</span></td></tr>";
+					if(data.detail.body.item.assemEmail != null || data.detail.body.item.assemEmail !== undefined){
+					div += "<tr><td>이메일 </td><td><span>"+data.detail.body.item.assemEmail+"</span></td></tr></table>";
+					}else{
+						div += "<tr><td>이메일 </td></tr></table>";
+					}
 					
-					
-					var div = "<div class='well'>";
-					div += '<img style="width:100px; height:100px;" src='+data.detailImg+'><br/><br/>';
-					div += "이름 : <span>"+data.detail.body.item.empNm+"</span><br/><br/>";
-					div += "정당 : <span>"+data.detail.body.item.polyNm+"</span><br/><br/>";
-					div += "당선 횟수 : <span>"+data.detail.body.item.electionNum+"</span><br/><br/>";
-					div += "소속 위원회 : <span>"+data.detail.body.item.shrtNm+"</span><br/><br/>";
-					
-					div += "학력 <span>"+data.detail.body.item.memTitle.replace(/\r-/gi,"<br/>○")+"</span><br/><br/>";
-					div += "이메일 : <span>"+data.detail.body.item.assemEmail+"</span><br/><br/>";
-					div += "전화번호 : <span>"+data.detail.body.item.assemTel+"</span><br/><br/>";
-					
-					
+					div +="</div></div>";
 					$('#detailPaliamentDiv').html(div);
 				}
 			});
 		}
 		
+		//국회의원 리스트 뿌릴때
 		$.ajax({
-			
 			url:"XmlParse.do",
 			
 			success : function(data){
@@ -89,15 +110,15 @@
 				var length = $(data.xml).find("item").length;
 				var PaliamentDiv = '';
 				//xml 데이터 담겨져있음\
+				
 				$(data.xml).find("item").each(function(){
-					
 					PaliamentDiv += '<div class="col-sm-3">';
 					PaliamentDiv += '<div class="well text-center">';
 					PaliamentDiv += '<input type="hidden" id='+$(this).find("deptCd").text()+'>';
 					PaliamentDiv += '<input type="hidden" id='+$(this).find("num").text()+'>';
 					PaliamentDiv += '<span><img style="width:100px; height:100px;" src='+$(this).find("jpgLink").text()+'></span><br/><br/>';
 					PaliamentDiv += '<span>이름 : '+$(this).find("empnm").text()+'</span><br/>';
-					PaliamentDiv += '<span>영문이름 : '+$(this).find("engnm").text()+'</span><br/>';
+					PaliamentDiv += '<span>정당 : '+jungDang($(this).find("deptCd").text(),$(this).find("num").text())+'</span><br/>';
 					PaliamentDiv += '<span>지역구 : '+$(this).find("orignm").text()+'</span><br/>';
 					PaliamentDiv += '<span>당선 회수 : '+$(this).find("reelegbnnm").text()+'</span><br/><br/>';
 					PaliamentDiv += '<input type="button" class="btn btn-primary" onclick="detailPaliament(this)" value=상세보기>';

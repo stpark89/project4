@@ -59,7 +59,7 @@ public class BoardController {
 		
 		String result = free_Service.writeBoard(dto);
 		if(result.equals("성공")){
-			return "redirect:FreeBoard.do";
+			return "redirect:board.do";
 		}else{
 			return "board.do";
 		}
