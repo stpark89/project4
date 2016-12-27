@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
-	
 <div class="container-fluid">
+<br/><br/><br/>
 <div class="col-md-4"></div>
 	<div class="col-md-4">
-		<h4>의원 검색</h4>
+		<p style="font-size:32px;">의원 검색</p>
 		<hr/>
 		<div class="well">
 		<form action="" class="form-horizontal">
@@ -71,11 +70,12 @@
 	<div class="col-md-4"></div>
 </div>
 <hr/>
-<br/><br/><br/>
+<br/>
 	<!--검색 결과 나올 Div 영역-->
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-2">
+		<div class="row" id="resultDiv">
+			
+			<!-- <div class="col-sm-2">
 				<div class="well text-center">
 					<img src="img/gom.png" class="img-thumbnail" alt="Cinque Terre" width="150" height="150"><br/><br/>
 					<p>이름 : <span>이정현</span></p>
@@ -123,5 +123,7 @@
 					<input type="button" class="btn btn-success" value="상세보기">
 				</div>
 			</div>
+			 -->
+			
 		</div>
 	</div>

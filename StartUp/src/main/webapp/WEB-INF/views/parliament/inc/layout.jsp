@@ -22,24 +22,67 @@
 <link rel="stylesheet" type="text/css" href="css/subHeader.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="js/Cross.js"></script>
-<script src="js/Parliament2.js"></script> 
 <title>의원정보</title>
 </head>
 <body>
-<div class="container-fluid">
-  <div class="row content">
+
 	<!-- Header -->
 	<tiles:insertAttribute name="header" />
 	
 	<!-- Main Wrapper -->
 	<tiles:insertAttribute name="content" />
-	
-	</div>
-</div>
+
 <!--풋터-->
 	<tiles:insertAttribute name="footer" />
 <script>
+	
+	//국회의원 상세보기
+ 	function detailPaliament($obj){
+		
+		
+		var btn = $($obj).prev().prev().prev().prev().prev().prev().prev().prev().prev().children().html();
+		console.log(btn);
+		//정당
+		//var name = $(obj).prev().prev().prev().prev().children().text();
+
+		//이름
+		//var reelegbnnm = $(obj).prev().prev().children().text();
+		//alert("뭔데 : " +name + " ////  " + reelegbnnm);
+		
+	}
+	
+
+	
 	$(function(){
+		
+		
+		$.ajax({
+			
+			url:"XmlParse.do",
+			
+			success : function(data){
+				
+				//xml item 크기
+				var length = $(data.xml).find("item").length;
+				var PaliamentDiv = '';
+				//xml 데이터 담겨져있음\
+				$(data.xml).find("item").each(function(){
+					PaliamentDiv += '<div class="col-sm-3">';
+					PaliamentDiv += '<div class="well text-center">';
+					PaliamentDiv += '<span><img style="width:100px; height:100px;" src='+$(this).find("jpgLink").text()+'></span><br/><br/>';
+					PaliamentDiv += '<span>이름 : '+$(this).find("empnm").text()+'</span><br/>';
+					PaliamentDiv += '<span>영문이름 : '+$(this).find("engnm").text()+'</span><br/>';
+					PaliamentDiv += '<span>지역구 : '+$(this).find("orignm").text()+'</span><br/>';
+					PaliamentDiv += '<span>당선 회수 : '+$(this).find("reelegbnnm").text()+'</span><br/><br/>';
+					PaliamentDiv += '<input type="button" class="btn btn-primary" onclick="detailPaliament(this)" value=상세보기>';
+					PaliamentDiv += '</div>';
+					PaliamentDiv += '</div>';
+				});
+				
+				$('#resultDiv').html(PaliamentDiv);
+			}
+			
+		});
 		
 		
 		$("#searchBtn").click(function() {
