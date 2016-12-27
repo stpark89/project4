@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-	<div class="container">
-    <h4>의원 상세보기</h4>
-    <hr/>
+	<br/><br/>
+	<div class="container text-center">
+    
     	<div id="detailPaliamentDiv">
     
     	</div>

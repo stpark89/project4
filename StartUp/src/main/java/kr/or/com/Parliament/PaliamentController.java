@@ -56,6 +56,24 @@ public class PaliamentController {
 		return jsonView;
 	}
 	
+	//정당 뽑을라고 이거함. ..
+	@RequestMapping("/PaliamentJungDang")
+	public View xmlPlusJung(String num, String dept_cd, Model model)throws Exception{
+		URL url = new URL("http://apis.data.go.kr/9710000/NationalAssemblyInfoService/getMemberDetailInfoList?dept_cd="+dept_cd+"&num="+num+"&numOfRows=300&ServiceKey=cuzCdknQ8EpFjg0Rw%2Fgd%2Br2TesHVExB8p3Pa5Rr0kgJUAhEyxcf9egVBUX29QGWrcq9ofcWuxOsECDRwsJXiSg%3D%3D");
+		URLConnection urlConn=url.openConnection(); //openConnection 해당 요청에 대해서 쓸 수 있는 connection 객체
+        BufferedReader br = new BufferedReader(new InputStreamReader(urlConn.getInputStream()));
+        
+        String data="";
+        String msg = null;
+        while((msg = br.readLine())!=null)
+        {
+            data += msg;
+        }
+        model.addAttribute("jungDang", data);
+		return jsonView;
+	}
+	
+	//국회의원 상세보기 - 기본  페이지
 	@RequestMapping("/PaliamentDetail")
 	public String detail(String num, String dept_cd, String img, Model model){
 		model.addAttribute("num", num);

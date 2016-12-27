@@ -65,7 +65,6 @@ function freeBoard(){
 function parliament(){
 	$("#tabContent").empty();
 	var div = '<table class="table"><tr><th class="text-center">No</th><th class="text-center">제목</th><th class="text-center">글쓴이</th><th class="text-center">작성일</th><th class="text-center">조회수</th></tr>';
-	
 	div += "</table>";
 	div +='<div class="col-sm-offset-11 col-sm-1">';
 	div +="<input type='button' class='btn btn-primary' value='글쓰기'>";
@@ -79,7 +78,6 @@ function parliament(){
 function statue(){
 	$("#tabContent").empty();
 	var div = '<table class="table"><tr><th class="text-center">No</th><th class="text-center">제목</th><th class="text-center">글쓴이</th><th class="text-center">작성일</th><th class="text-center">조회수</th></tr>';
-	
 	div += "</table>";
 	div +='<div class="col-sm-offset-11 col-sm-1">';
 	div +="<input type='button' class='btn btn-primary' value='글쓰기'>";
