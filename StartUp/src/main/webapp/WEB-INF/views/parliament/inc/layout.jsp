@@ -48,6 +48,7 @@
 	var jungdangName = '';
  	//정당 뽑아오는 함수
  	function jungDang(deptcd,num){
+ 		
  		jungdangName = '';
 		$.ajax({
 			url : "PaliamentJungDang.do",
@@ -57,7 +58,9 @@
 			},
 			async:false,
 			success : function(data){
+				
 				jungdangName = $(data.jungDang).find("item").find("polyNm").text();
+				
 			}
 		}); 
 		return jungdangName;
@@ -76,7 +79,6 @@
 				},
 				success : function(data){
 					$('#detailPaliamentDiv').empty();
-					
 					var div = "<div class='row'><div class='well col-sm-4'>";
 					div += '<img style="width:100px; height:100px;" src='+data.detailImg+'><br/>';
 					div += "</div>";
@@ -112,18 +114,50 @@
 				//xml 데이터 담겨져있음\
 				
 				$(data.xml).find("item").each(function(){
+					
+					//well 테두리 색상
+					var wellColor = '';
+					//정당이름 뽑아옴
+					var resultJung = jungDang($(this).find("deptCd").text(),$(this).find("num").text());
+					console.log("정당 이름 : " +resultJung);
+					if(resultJung == '' || resultJung == ""){
+						resultJung = "무소속";
+					}
+					
+					switch(resultJung){
+						case '국민의당': 
+										wellColor = 'green';	
+										break;	
+						case '더불어민주당': 
+										wellColor = 'blue';
+										break;
+						case '새누리당': 
+										wellColor = 'red';
+										break;
+						case '정의당': 
+										wellColor = 'yellow';
+										break;
+										
+						case '무소속': 
+										wellColor = 'gray';
+										break;
+					}
+					
+					console.log("색상d : " +wellColor);
 					PaliamentDiv += '<div class="col-sm-3">';
 					PaliamentDiv += '<div class="well text-center">';
 					PaliamentDiv += '<input type="hidden" id='+$(this).find("deptCd").text()+'>';
 					PaliamentDiv += '<input type="hidden" id='+$(this).find("num").text()+'>';
 					PaliamentDiv += '<span><img style="width:100px; height:100px;" src='+$(this).find("jpgLink").text()+'></span><br/><br/>';
 					PaliamentDiv += '<span>이름 : '+$(this).find("empnm").text()+'</span><br/>';
-					PaliamentDiv += '<span>정당 : '+jungDang($(this).find("deptCd").text(),$(this).find("num").text())+'</span><br/>';
+					PaliamentDiv += '<span>정당 : '+resultJung+'</span><br/>';
 					PaliamentDiv += '<span>지역구 : '+$(this).find("orignm").text()+'</span><br/>';
 					PaliamentDiv += '<span>당선 회수 : '+$(this).find("reelegbnnm").text()+'</span><br/><br/>';
 					PaliamentDiv += '<input type="button" class="btn btn-primary" onclick="detailPaliament(this)" value=상세보기>';
 					PaliamentDiv += '</div>';
 					PaliamentDiv += '</div>';
+					
+					resultJung = '';
 				});
 				
 				$('#resultDiv').html(PaliamentDiv);
