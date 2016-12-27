@@ -62,7 +62,7 @@
 					
 					
 					
-					var div = "<div class='well col-sm-offset-4 col-sm-5'>";
+					var div = "<div class='well'>";
 					div += '<img style="width:100px; height:100px;" src='+data.detailImg+'><br/><br/>';
 					div += "이름 : <span>"+data.detail.body.item.empNm+"</span><br/><br/>";
 					div += "정당 : <span>"+data.detail.body.item.polyNm+"</span><br/><br/>";
