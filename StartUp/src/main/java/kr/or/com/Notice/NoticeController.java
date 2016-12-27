@@ -10,10 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.View;
 
 @Controller
-public class Notice {
+public class NoticeController {
 
 	@Autowired
 	private NoticeService noticeService;
@@ -21,19 +22,36 @@ public class Notice {
 	@Autowired
 	private View jsonView;
 	
+	@Autowired 
+	private QnaService qnaservice;
+	
 	//헤더 공지사항 클릭시 - 공지사항 index 부분
 	@RequestMapping("/NoticeIndex.do")
 	public String NoticeIndex(Model model){
 		List<NoticeDTO> list = noticeService.selectAllListNotice();
-		System.out.println(list.toString());
 		model.addAttribute("list", list);
 		return "notice.Notice";
 	}
 	
-	@RequestMapping("/NoticeView.do")
-	public View NoticeTab(){
+	@RequestMapping("/Noticelist.do")
+	public View NoticeTab(Model model){
+		List<NoticeDTO> list = noticeService.selectAllListNotice();
+		model.addAttribute("list", list);
 		return jsonView;
 	}
 	
+	//Q&A 탭 클릭시
+	@RequestMapping("/QnaIndex.do")
+	public View QnaIndex(Model model){
+		List<QnaDTO> list = qnaservice.qnaList();
+		model.addAttribute("qnalist", list);
+		
+		return jsonView;
+	}
 	
+	//공지사항 글쓰기 버튼 클릭시
+	@RequestMapping(value="/WriteNotice.do", method=RequestMethod.GET)
+	public String NoticeWriteForm(){
+		return "notice.writeNoticeForm";
+	}
 }

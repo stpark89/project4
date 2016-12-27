@@ -2,29 +2,27 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<div class="container">
-	
-	<div class="row">	    
-	    <div class="col-sm-offset-5 col-sm-4">
-		    <ul class="nav nav-pills">
-		  		<li class="active"><a id="noticeBtn">공지사항</a></li>
-		  		<li class="active"><a id="QNABtn">Q&A</a></li>
-			</ul>
-	    </div>
-	</div>
-	<br/>	    
+<div id="wrap">
+	<h1>공지사항/Q&A</h1>
+	<hr />
+	<ul id="tabMenu">
+		<li>공지사항</li>
+		<li>Q&A</li>
+	</ul>
+	<input type="hidden" value="${id}" id="hiddenId">
+       
 	<div id="NoticeContentDiv">
-		<table class="table">
+	   <table class="table">
 		<tr>
-			<th>No.</th>
-			<th>제목</th>
-			<th>작성자</th>
-			<th>작성일</th>
+			<th class="text-center">No.</th>
+			<th class="text-center">제목</th>
+			<th class="text-center">작성자</th>
+			<th class="text-center">작성일</th>
 		</tr>
 		<c:choose>
 			<c:when test="${fn:length(list) > 0}">
 				<c:forEach var="list" items="${list}">
-					<tr>
+					<tr class="text-center">
 						<td>${list.noticeBno}</td>
 						<td>${list.title}</td>
 						<td>${list.writer}</td>
@@ -40,12 +38,11 @@
 		</c:choose>	
 		</table>
 		<c:choose>
-			<c:when test="${id == ''}">
+			<c:when test="${id == 'admin'}">
 				<div class="col-sm-offset-11 col-sm-1">
 					<input type="button" class="btn btn-primary" value="글쓰기">
 				</div>
 			</c:when>
 		</c:choose>
-	</div>	    
-		    
+	</div>	       
 </div>    
