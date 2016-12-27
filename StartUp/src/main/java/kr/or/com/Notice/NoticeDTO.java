@@ -2,16 +2,15 @@ package kr.or.com.Notice;
 
 public class NoticeDTO {
 
-	private String noticeBno;
+	private int noticeBno;
 	private String title;
 	private String writer;
 	private String content;
 	private String regdate;
-	
-	public String getNoticeBno() {
+	public int getNoticeBno() {
 		return noticeBno;
 	}
-	public void setNoticeBno(String noticeBno) {
+	public void setNoticeBno(int noticeBno) {
 		this.noticeBno = noticeBno;
 	}
 	public String getTitle() {
@@ -38,10 +37,11 @@ public class NoticeDTO {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
-	
 	@Override
 	public String toString() {
 		return "NoticeDTO [noticeBno=" + noticeBno + ", title=" + title + ", writer=" + writer + ", content=" + content
 				+ ", regdate=" + regdate + "]";
 	}
+	
+	
 }
