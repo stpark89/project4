@@ -38,23 +38,46 @@
 	
 	//국회의원 상세보기
  	function detailPaliament($obj){
-		
-		
-		var btn = $($obj).prev().prev().prev().prev().prev().prev().prev().prev().prev().children().html();
-		console.log(btn);
-		//정당
-		//var name = $(obj).prev().prev().prev().prev().children().text();
-
-		//이름
-		//var reelegbnnm = $(obj).prev().prev().children().text();
-		//alert("뭔데 : " +name + " ////  " + reelegbnnm);
-		
+		var img = $($obj).prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().children().attr("src");
+		var num = $($obj).prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().attr("id");
+		var deptCd = $($obj).prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().attr("id");
+		location.href="PaliamentDetail.do?num="+num+"&dept_cd="+deptCd+"&img="+img;
 	}
 	
 
 	
 	$(function(){
-		
+		//상세보기 실질적 데이터 받아옴
+		if($('#tid').val() == '1'){
+			alert("1일때입니다");
+			$.ajax({
+				url:"PaliamentDetailView.do",
+				data : {
+					num : $('#detailHiden_num').val(),
+					dept_cd : $('#detailHiden_dept_cd').val(),
+					img : $('#detail_img').val()
+				},
+				success : function(data){
+					$('#detailPaliamentDiv').empty();
+					
+					
+					
+					var div = "<div class='well col-sm-offset-4 col-sm-5'>";
+					div += '<img style="width:100px; height:100px;" src='+data.detailImg+'><br/><br/>';
+					div += "이름 : <span>"+data.detail.body.item.empNm+"</span><br/><br/>";
+					div += "정당 : <span>"+data.detail.body.item.polyNm+"</span><br/><br/>";
+					div += "당선 횟수 : <span>"+data.detail.body.item.electionNum+"</span><br/><br/>";
+					div += "소속 위원회 : <span>"+data.detail.body.item.shrtNm+"</span><br/><br/>";
+					
+					div += "학력 <span>"+data.detail.body.item.memTitle.replace(/\r-/gi,"<br/>○")+"</span><br/><br/>";
+					div += "이메일 : <span>"+data.detail.body.item.assemEmail+"</span><br/><br/>";
+					div += "전화번호 : <span>"+data.detail.body.item.assemTel+"</span><br/><br/>";
+					
+					
+					$('#detailPaliamentDiv').html(div);
+				}
+			});
+		}
 		
 		$.ajax({
 			
@@ -67,8 +90,11 @@
 				var PaliamentDiv = '';
 				//xml 데이터 담겨져있음\
 				$(data.xml).find("item").each(function(){
+					
 					PaliamentDiv += '<div class="col-sm-3">';
 					PaliamentDiv += '<div class="well text-center">';
+					PaliamentDiv += '<input type="hidden" id='+$(this).find("deptCd").text()+'>';
+					PaliamentDiv += '<input type="hidden" id='+$(this).find("num").text()+'>';
 					PaliamentDiv += '<span><img style="width:100px; height:100px;" src='+$(this).find("jpgLink").text()+'></span><br/><br/>';
 					PaliamentDiv += '<span>이름 : '+$(this).find("empnm").text()+'</span><br/>';
 					PaliamentDiv += '<span>영문이름 : '+$(this).find("engnm").text()+'</span><br/>';
