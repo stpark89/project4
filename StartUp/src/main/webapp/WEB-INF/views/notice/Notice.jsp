@@ -40,7 +40,7 @@
 		<c:choose>
 			<c:when test="${id == 'admin'}">
 				<div class="col-sm-offset-11 col-sm-1">
-					<input type="button" class="btn btn-primary" value="글쓰기">
+					<input type="button" class="btn btn-primary" id="writeNotice" value="글쓰기">
 				</div>
 			</c:when>
 		</c:choose>
