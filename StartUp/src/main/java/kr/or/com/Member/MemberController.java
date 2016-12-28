@@ -35,7 +35,7 @@ public class MemberController {
 		if(result.equals("성공")){
 			HttpSession session = request.getSession();
 			session.setAttribute("id", dto.getId());
-			return "LoginSuccessIndex";	
+			return "redirect:index.do";	
 		}else{
 			return "member.Login";
 		}
@@ -45,7 +45,7 @@ public class MemberController {
 	public String logOut(Model model, HttpServletRequest request){
 		HttpSession session = request.getSession();
 		session.invalidate();
-		model.addAttribute("url", "index.jsp");
+		model.addAttribute("url", "index.do");
 		return "LogOut";
 	}
 	

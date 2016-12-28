@@ -20,5 +20,11 @@ public class indexController {
 		model.addAttribute("data", "성공");
 		return jsonview;
 	}
+	
+	@RequestMapping("/index.do")
+	public String index(){
+		System.out.println("인덱스 . do ");
+		return "index";
+	}
 
 }

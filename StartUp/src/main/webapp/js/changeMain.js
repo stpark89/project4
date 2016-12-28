@@ -49,6 +49,23 @@ $(document).ready(function(e) {
 		});//animate
 	});
 	
+	
+	var mo_sts = 0;
+	$("#more").click(function(e) {
+        
+		if(mo_sts == 0) {
+			$("#dashboard").animate({height:"1000px"});
+			$("#more").html('<i class="fa fa-angle-double-up" aria-hidden="true"></i>');
+			$(".hidden_box").animate({opacity:1});
+			mo_sts = 1;
+		} else if(mo_sts == 1) {
+			$("#dashboard").animate({height:"600px"});
+			$("#more").html('<i class="fa fa-angle-double-down" aria-hidden="true"></i>');
+			$(".hidden_box").animate({opacity:0});
+			mo_sts = 0;
+		}
+    });
+	
 	//의안 상세보기 클릭시
 	$("#statuteBtn").click(function(){
 		location.href="statute.do";
