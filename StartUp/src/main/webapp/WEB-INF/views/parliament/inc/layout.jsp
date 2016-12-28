@@ -22,6 +22,8 @@
 <link rel="stylesheet" type="text/css" href="css/subHeader.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="js/Cross.js"></script>
+<script src="js/Palia.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <title>의원정보</title>
 </head>
 <body>
@@ -31,10 +33,19 @@
 	
 	<!-- Main Wrapper -->
 	<tiles:insertAttribute name="content" />
-
+	
 <!--풋터-->
 	<tiles:insertAttribute name="footer" />
+
 <script>
+
+	var guck = 0,
+	  sae = 0,
+	  doub = 0,
+	  muso = 0,
+	  jung = 0;
+	// 당별 카운트 새기 위한 것
+	
 	
 	//국회의원 상세보기
  	function detailPaliament($obj){
@@ -66,6 +77,8 @@
 		return jungdangName;
 	}
 	 
+
+ 	
 	$(function(){
 		//상세보기 실질적 데이터 받아옴
 		if($('#tid').val() == '1'){
@@ -78,22 +91,23 @@
 					img : $('#detail_img').val()
 				},
 				success : function(data){
+					
 					$('#detailPaliamentDiv').empty();
-					var div = "<div class='row'><div class='well col-sm-4'>";
-					div += '<img style="width:100px; height:100px;" src='+data.detailImg+'><br/>';
-					div += "</div>";
-					div += "<div class='col-sm-8'><table class='table'>";
-					div += "<tr><td>정당 </td><td><span>"+data.detail.body.item.polyNm+"</span></td></tr>";
-					div += "<tr><td>당선 횟수</td><td><span>"+data.detail.body.item.electionNum+"</span></td></tr>";
-					div += "<tr><td>소속 위원회</td><td><span>"+data.detail.body.item.shrtNm+"</span></td></tr>";
+					var div = "<div class='row'><p class='text-center' style='font-size : 32px;'>이름 : "+data.detail.body.item.empNm+"</p><div class='well col-sm-12'>";
+					div += '<img class="img-thumbnail" style="width:300px; height:300px;" src='+data.detailImg+' ><br/>';
+					div += "</div></div>";
+					div += "<div class='row'><div class='col-sm-12'>";
+					div += "<span>정당 : </span><span>"+data.detail.body.item.polyNm+"</span><br/><hr/>";
+					div += "<span>당선 횟수 : </span><span>"+data.detail.body.item.electionNum+"</span><br/><hr/>";
+					div += "<span>소속 위원회 : </span><span>"+data.detail.body.item.shrtNm+"</span><br/><hr/>";
 					if(data.detail.body.item.memTitle != null || data.detail.body.item.memTitle !== undefined){
-						div += "<tr><td>학력 </td><td><span>"+data.detail.body.item.memTitle.replace(/\r-/gi,"<br/>○")+"</span></td></tr>";
+						div += "<span>학력 : </span><span>"+data.detail.body.item.memTitle.replace(/\r-/gi,"<br/>○")+"</span><br/><hr/>";
 					}
-					div += "<tr><td>전화번호 </td><td><span>"+data.detail.body.item.assemTel+"</span></td></tr>";
+					div += "<span>전화번호 : </span><span>"+data.detail.body.item.assemTel+"</span><br/><hr/>";
 					if(data.detail.body.item.assemEmail != null || data.detail.body.item.assemEmail !== undefined){
-					div += "<tr><td>이메일 </td><td><span>"+data.detail.body.item.assemEmail+"</span></td></tr></table>";
+					div += "<span>이메일 : </span><span>"+data.detail.body.item.assemEmail+"</span><br/><hr/>";
 					}else{
-						div += "<tr><td>이메일 </td></tr></table>";
+						div += "<span>이메일 : </span><br/><hr/>";
 					}
 					
 					div +="</div></div>";
@@ -108,44 +122,46 @@
 			
 			success : function(data){
 				
-				//xml item 크기
-				var length = $(data.xml).find("item").length;
 				var PaliamentDiv = '';
-				//xml 데이터 담겨져있음\
 				
+				//xml 데이터 담겨져있음\
 				$(data.xml).find("item").each(function(){
 					
 					//well 테두리 색상
 					var wellColor = '';
 					//정당이름 뽑아옴
 					var resultJung = jungDang($(this).find("deptCd").text(),$(this).find("num").text());
-					console.log("정당 이름 : " +resultJung);
+				
 					if(resultJung == '' || resultJung == ""){
 						resultJung = "무소속";
 					}
 					
 					switch(resultJung){
 						case '국민의당': 
-										wellColor = 'green';	
+										wellColor = 'green';
+										guck += 1;
 										break;	
 						case '더불어민주당': 
 										wellColor = 'blue';
+										doub += 1;
 										break;
 						case '새누리당': 
 										wellColor = 'red';
+										sae += 1;
 										break;
 						case '정의당': 
 										wellColor = 'yellow';
+										jung += 1;
 										break;
 										
 						case '무소속': 
 										wellColor = 'gray';
+										muso += 1;
 										break;
 					}
-					
-					console.log("색상d : " +wellColor);
+				
 					PaliamentDiv += '<div class="col-sm-3">';
-					PaliamentDiv += '<div class="well text-center">';
+					PaliamentDiv += '<div class="well text-center" style="background-color:white; border:1px solid '+wellColor+'">';
 					PaliamentDiv += '<input type="hidden" id='+$(this).find("deptCd").text()+'>';
 					PaliamentDiv += '<input type="hidden" id='+$(this).find("num").text()+'>';
 					PaliamentDiv += '<span><img style="width:100px; height:100px;" src='+$(this).find("jpgLink").text()+'></span><br/><br/>';
@@ -153,14 +169,19 @@
 					PaliamentDiv += '<span>정당 : '+resultJung+'</span><br/>';
 					PaliamentDiv += '<span>지역구 : '+$(this).find("orignm").text()+'</span><br/>';
 					PaliamentDiv += '<span>당선 회수 : '+$(this).find("reelegbnnm").text()+'</span><br/><br/>';
-					PaliamentDiv += '<input type="button" class="btn btn-primary" onclick="detailPaliament(this)" value=상세보기>';
+					PaliamentDiv += '<input type="button" class="btn" style="color:white; background-color:'+wellColor+'" onclick="detailPaliament(this)" value=상세보기>';
 					PaliamentDiv += '</div>';
 					PaliamentDiv += '</div>';
 					
 					resultJung = '';
+					
+					
+					
 				});
 				
 				$('#resultDiv').html(PaliamentDiv);
+				google.charts.load('current', {'packages':['corechart']});
+			 	google.charts.setOnLoadCallback(drawChart);
 			}
 			
 		});
@@ -198,6 +219,36 @@
 
 		}); 
 	});
-</script>
+ 	
+
+	
+ 	function drawChart() {
+ 	  var data = google.visualization.arrayToDataTable([
+ 	    ['Task', 'Hours per Day'],
+ 	    ['국민의당',     guck],
+ 	    ['더불어 민주당',      doub],
+ 	    ['새누리당',  sae],
+ 	    ['정의당', jung],
+ 	    ['무소속',    muso]
+ 	  ]);
+
+ 	  var options = {
+ 	    title: '국회의원 현황',
+ 	    is3D: true,
+ 	   	slices: {
+           0: { color: 'green' },
+           1: { color: 'blue' },
+           2: { color: 'red' },
+           3: { color: 'yellow' },
+           4: { color: 'gray' }
+         }
+ 	  };
+
+ 	  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+ 	  chart.draw(data, options);
+ 	}	
+	
+</script>	
 </body>
 </html>

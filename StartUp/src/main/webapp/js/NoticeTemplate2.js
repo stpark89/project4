@@ -58,12 +58,16 @@ function qna(){
 			}
 			
 			div+='</table>';
-			div+='<div class="col-sm-offset-11 col-sm-1"><input type="button" class="btn btn-primary" value="글쓰기"></div>'
+			div+='<div class="col-sm-offset-11 col-sm-1"><input type="button" class="btn btn-primary" value="글쓰기" onclick="qnaWriteFun()"></div>'
 			$('#NoticeContentDiv').html(div);
 		}
 	});
 }
 
+//Qna 글쓰기
+function qnaWriteFun(){
+	location.href="WriteQna.do";
+}
 
 
 $(function(){
@@ -89,6 +93,7 @@ $(function(){
 		alert('클릭');
 		location.href="WriteNotice.do";
 	});
+	
 	
 	
 });

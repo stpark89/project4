@@ -49,6 +49,12 @@ public class NoticeController {
 		return jsonView;
 	}
 	
+	//Qna 글쓰기
+	@RequestMapping("/WriteQna.do")
+	public String QnaWrite(){
+		return "notice.Qna";
+	}
+	
 	//공지사항 글쓰기 버튼 클릭시
 	@RequestMapping(value="/WriteNotice.do", method=RequestMethod.GET)
 	public String NoticeWriteForm(){

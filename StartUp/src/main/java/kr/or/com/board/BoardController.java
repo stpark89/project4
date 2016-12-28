@@ -40,6 +40,11 @@ public class BoardController {
 		return jsonView;
 	}
 	
+	@RequestMapping("/Back_FreeBoard.do")
+	public String backBoard(){
+		return "redirect:board.do";
+	}
+	
 	//자유게시판 글쓰기
 	@RequestMapping(value="/FreeBoardWrite.do", method=RequestMethod.GET)
 	public String FreeBoardWrite(){

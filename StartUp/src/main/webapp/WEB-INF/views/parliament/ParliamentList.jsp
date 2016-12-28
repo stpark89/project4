@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>	
 <div class="container-fluid">
 <br/><br/><br/>
-<div class="col-md-4"></div>
-	<div class="col-md-4">
+<div class="col-md-1"></div>
+<div class="col-md-4">
 		<p style="font-size:32px;">의원 검색</p>
 		<hr/>
 		<div class="well">
@@ -67,7 +67,11 @@
 		
 		</div>
 	</div>
-	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		 <div id="piechart" style="width: 800px; height: 500px;"></div>
+	</div>
+	
+	<div class="col-md-1"></div>
 </div>
 <hr/>
 <br/>
@@ -127,3 +131,6 @@
 			
 		</div>
 	</div>
+	
+
+	
