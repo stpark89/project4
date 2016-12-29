@@ -83,7 +83,7 @@
         </article>
     </section>
     
-    <section id="dashboard">
+  <!--   <section id="dashboard">
     	<h1>게시판</h1>
         <p>설명 설명 설명</p>
     	<article>
@@ -97,7 +97,7 @@
             <div class="hidden_box"></div>
         </article>
         <div id="more"><i class="fa fa-angle-double-down" aria-hidden="true"></i></div>
-    </section>
+    </section> -->
 
     <section id="comment">
     	<h1>COMMENT</h1>
