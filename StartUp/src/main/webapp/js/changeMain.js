@@ -76,6 +76,10 @@ $(document).ready(function(e) {
 		location.href="Member_Parliament.do";
 	});
 	
+	//커뮤니티 페이지
+	$('#boardIndexBtn').click(function(){
+		location.href="CommunityIndex.do";
+	});
 	
 	//코멘트 보내기
 	$('#sendCommentBtn').click(function(){

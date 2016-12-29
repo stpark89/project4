@@ -1,5 +1,9 @@
 package kr.or.com.board;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +27,29 @@ public class BoardController {
 	
 	@Autowired
 	private View jsonView;
+	
+	//게시판 커뮤니티 메인 페이지
+	@RequestMapping("/CommunityIndex.do")
+	public String Community(){
+		return "community.CommunityIndex";
+	}
+	
+	@RequestMapping("/CommunityNews_1.do")
+	public View News1(Model model) throws Exception{
+		
+		URL url = new URL("http://www.moel.go.kr/rss/rss.jsp?bbs_cd=105");
+		URLConnection urlConn=url.openConnection(); //openConnection 해당 요청에 대해서 쓸 수 있는 connection 객체
+        BufferedReader br = new BufferedReader(new InputStreamReader(urlConn.getInputStream()));
+        String data="";
+        String msg = null;
+        while((msg = br.readLine())!=null)
+        {
+            data += msg;
+        }
+        model.addAttribute("Goyoung", data);
+		return jsonView;
+	}
+	
 	
 	//게시판 관련 
 	@RequestMapping("/board.do")
