@@ -18,6 +18,8 @@ import org.springframework.web.servlet.View;
 
 import kr.or.com.FreeBoard.FreeBoardDTO;
 import kr.or.com.FreeBoard.FreeBoardService;
+import net.sf.json.JSONObject;
+import net.sf.json.xml.XMLSerializer;
 
 @Controller
 public class BoardController {
@@ -46,7 +48,11 @@ public class BoardController {
         {
             data += msg;
         }
-        model.addAttribute("Goyoung", data);
+        
+        
+        JSONObject obj = (JSONObject) new XMLSerializer().read(data.toString());
+        System.out.println("변환을 해봅시다 : " +obj);
+        model.addAttribute("Goyoung", obj);
 		return jsonView;
 	}
 	
