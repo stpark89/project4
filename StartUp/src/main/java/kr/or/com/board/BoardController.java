@@ -40,6 +40,7 @@ public class BoardController {
 	public View News1(Model model) throws Exception{
 		
 		URL url = new URL("http://www.moel.go.kr/rss/rss.jsp?bbs_cd=105");
+		
 		URLConnection urlConn=url.openConnection(); //openConnection 해당 요청에 대해서 쓸 수 있는 connection 객체
         BufferedReader br = new BufferedReader(new InputStreamReader(urlConn.getInputStream()));
         String data="";
@@ -51,11 +52,41 @@ public class BoardController {
         
         
         JSONObject obj = (JSONObject) new XMLSerializer().read(data.toString());
-        System.out.println("변환을 해봅시다 : " +obj);
+      //  System.out.println("변환을 해봅시다 : " +obj);
         model.addAttribute("Goyoung", obj);
 		return jsonView;
 	}
 	
+	//뉴스 rss
+	@RequestMapping("/CommunityNews_2.do")
+	public View News2(Model model) throws Exception{
+		
+	
+		URL url= new URL("http://imnews.imbc.com/rss/news/news_00.xml");
+		URLConnection urlConn=url.openConnection(); //openConnection 해당 요청에 대해서 쓸 수 있는 connection 객체
+    
+		String headerType = urlConn.getContentType();
+		
+		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5헤더타입은 ?? : "+headerType);
+		
+		
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(urlConn.getInputStream(),"euc-kr"));
+		
+		
+		String data="";
+        String msg = null;
+        while((msg = br.readLine())!=null)
+        {
+            data += msg;
+        }
+
+       System.out.println("data 확인좀 : "+data);
+        
+        JSONObject obj = (JSONObject) new XMLSerializer().read(data.toString()); System.out.println("변환을 해봅시다 : " +obj);
+        model.addAttribute("joinsmsn", obj);
+        return jsonView;
+	}
 	
 	//게시판 관련 
 	@RequestMapping("/board.do")

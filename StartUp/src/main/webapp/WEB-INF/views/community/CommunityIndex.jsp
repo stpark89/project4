@@ -55,13 +55,11 @@
             <div>
             	<div class="main_news">
                 	<img src="http://placehold.it/130x130" />
-                    <h2>MAIN_TITLE 메인기사제목<br><span>2016.12.29.</span></h2>
+                    <h2 id="mainNews2"><br><span></span></h2>
                 </div>
-                <ul class="dashList">
-                   <li>Title제목<span>16/12/29</span></li>
-                   <li>Title제목<span>16/12/29</span></li>
-                   <li>Title제목<span>16/12/29</span></li>
-               </ul>
+                <ul class="dashList" id="goUl2">
+               
+                </ul>
             </div>
        </article>
     </section>
