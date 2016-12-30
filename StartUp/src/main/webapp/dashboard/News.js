@@ -34,6 +34,12 @@ $(function(){
 					var link = value.link;
 					var date = value["dc:date"]["#text"];
 					$('#mainNews').html("<a href="+value.link+">"+title+"</a>"+date);
+				}else if(index >= 1 && index <= 4){
+					console.log("엘스 이프 : "+index);
+					var title = value.title;
+					var link = value.link;
+					var date = value["dc:date"]["#text"];
+					$('#goUl').append("<li><a href="+value.link+">"+title+"</a><span>"+date+"</span></li>");
 				}
 				//제목 - 링크 뽑음 - console.log(value.title + " / link : "+value.link);
 				console.log(value.title + " / link : "+value.link+"/ "+value["dc:date"]["#text"]);
