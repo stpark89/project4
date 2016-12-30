@@ -48,8 +48,7 @@ $(function(){
 			
 			//var length = data.Goyoung.item.length;
 
-			
-			
+		
 		}
 	});
 	
