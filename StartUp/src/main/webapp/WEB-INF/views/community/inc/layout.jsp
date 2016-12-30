@@ -18,7 +18,7 @@
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="dashboard/dashboard.js"></script>
 <script src="dashboard/sub01.js"></script>
-<script src="js/NewsRss.js"></script>
+<script src="dashboard/News.js"></script>
 <title>게시판</title>
 </head>
 <body>

@@ -175,8 +175,6 @@
 					
 					resultJung = '';
 					
-					
-					
 				});
 				
 				$('#resultDiv').html(PaliamentDiv);

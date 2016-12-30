@@ -48,10 +48,8 @@
                 	<img src="http://placehold.it/130x130" />
                     <h2 id="mainNews"><br><span></span></h2>
                 </div>
-                <ul class="dashList">
-                   <li>Title제목<span>16/12/29</span></li>
-                   <li>Title제목<span>16/12/29</span></li>
-                   <li>Title제목<span>16/12/29</span></li>
+                <ul class="dashList" id="goUl">
+                   
                </ul>
             </div>
             <div>
