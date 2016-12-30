@@ -8,6 +8,8 @@ $(function(){
 		url : "CommunityNews_1.do",
 		dataType : "json",
 		success : function(data){
+			$('#mainNews').empty();
+			$('#goUl').empty();
 			//console.log(data.Goyoung);
 			$.each(data.Goyoung.channel,function(index, value){
 				//var date = new Date(value['date']);
@@ -26,7 +28,7 @@ $(function(){
 			});
 			
 			$.each(data.Goyoung.channel.item,function(index, value){
-					
+
 				//한줄 리스트 있는것
 				//console.log("index : " + index + "hi : "+value);
 				if(index == 0){
