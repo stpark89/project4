@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
-@import url(core.css);
+@import url(dashcore.css);
 
 #nav {
 	position:fixed;
@@ -20,14 +20,6 @@
 	color:#fff;
 	line-height:100px;
 	font-size:50px;	
-}
-
-#nav>h1>a{
-	color:#fff;
-}
-
-#logDiv>a{
-	color:#fff;
 }
 
 #mainMenu {

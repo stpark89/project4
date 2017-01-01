@@ -19,7 +19,8 @@ $(function(){
 					var title = value.title;
 					var link = value.link;
 					var date = value["dc:date"]["#text"];
-					$('#mainNews').html("<a href="+value.link+">"+title+"</a>"+date);
+					$('#mainNews').append("<a href="+value.link+"><span style='text-overflow:ellipsis'>"+title+"</span></a><br/><span>"+date+"</span>");
+					
 				}else if(index >= 1 && index < 4){
 					var title = value.title;
 					var link = value.link;
@@ -47,7 +48,7 @@ $(function(){
 				var date = obj.pubDate;
 				console.log(date);
 				if(index==0){
-					$('#mainNews2').html("<a href="+link+">"+title+"</a>"+date);
+					$('#mainNews2').html("<a href="+link+"><span>"+title+"</span></a><br><span>"+date+"</span></li>");
 				}else if(index>=1 && index<4){
 					$('#goUl2').append("<li><a href="+link+">"+title+"</a><span>"+date+"</span></li>");
 				}
