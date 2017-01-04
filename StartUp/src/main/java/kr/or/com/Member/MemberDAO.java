@@ -10,4 +10,7 @@ public interface MemberDAO {
 	
 	//회원가입시 아이디 중복확인
 	public String checkId(String id);
+	
+	//관심사
+	public MemberDTO selectInterest(String id);
 }

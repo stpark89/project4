@@ -21,7 +21,7 @@
 		<li><a href="#" class="fdMenu">의원</a></li>
 		<li><a href="board.do">커뮤니티</a></li>
 		<li><a href="NoticeIndex.do">공지사항/QNA</a></li>
-		<li><a href="#">채팅</a></li>
+		<li><a href="chat.do">채팅</a></li>
 	</ul>
 	<div id="logDiv">
 		<c:choose>

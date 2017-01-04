@@ -46,8 +46,8 @@
 			  <button type="button" id="searchStatuteBtn" class="btn btn-primary">검색</button>
 			</form>
 			<br/><br/>
-			<table class="table hover-table">
-				<tr>
+			<table class="table hover-table" id="statuteTable">
+				<!-- <tr>
 					<th>제안일</th>
 					<th>의안명</th>
 					<th>발의자</th>
@@ -60,7 +60,7 @@
 					<td>박성준</td>
 					<td></td>
 					<td>계류</td>
-				</tr>
+				</tr> -->
 			</table>
 			
 		</div>

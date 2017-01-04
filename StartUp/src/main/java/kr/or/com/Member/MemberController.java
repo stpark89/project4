@@ -1,5 +1,8 @@
 package kr.or.com.Member;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import javax.servlet.http.HttpSession;
@@ -41,6 +44,25 @@ public class MemberController {
 		}
 	}
 	
+    @RequestMapping("/chat.do")
+    public String test(HttpServletRequest request, Model model){
+    	System.out.println("chat.do=================");
+    	HttpSession session = request.getSession();
+    	String id =(String)session.getAttribute("id");
+    	System.out.println("아이디 : "+id);
+    	MemberDTO dto = service.selectInterest(id);
+    	String[] interests = dto.getInterest().split(",");
+    	
+    	List<String> interest = new ArrayList<String>();
+    	for(int i=0; i<interests.length; i++){
+    		System.out.println(" 관심사:::::::::::"+interests[i]);
+    		interest.add(interests[i]);
+    	}
+    	
+    	model.addAttribute("interest", interest);
+    	return "member.chat";
+    }
+	
 	@RequestMapping("/LogOut.do")
 	public String logOut(Model model, HttpServletRequest request){
 		HttpSession session = request.getSession();
@@ -73,7 +95,7 @@ public class MemberController {
 	public String AddMember(MemberDTO dto, Model model){
 		String msg =null;
 		String url=null;
-		System.out.println(" 회원가입 controller :"+dto.toString());
+		System.out.println(" 회원가입 controller 1 :"+dto.toString());
 		String[] birtharray = dto.getBirth().split(",");
 		if(birtharray[1].length()==1){
 			birtharray[1]="0"+birtharray[1];
@@ -87,6 +109,11 @@ public class MemberController {
 		System.out.println(" 생년월일 : "+birth);
 		dto.setBirth(birth);
 		
+		
+		if(dto.getInterest() == null){
+			dto.setInterest("0");
+		}
+		System.out.println(" 회원가입 controller  2 :"+dto.toString());
 		int result = service.AddMember(dto);
 		if(result>0){
 			msg="회원가입을 축하드립니다";

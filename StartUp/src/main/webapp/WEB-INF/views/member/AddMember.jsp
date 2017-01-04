@@ -46,7 +46,7 @@
 						<label class="control-label col-sm-3">생년월일</label> 
 						<div class="col-sm-3">
 							<select class="form-control" name="birth">
-							  <c:forEach begin="1940" end="2016" var="y">
+							  <c:forEach begin="1940" end="2017" var="y">
 							    	<option value="${y}">${y}년</option>
 							  </c:forEach>
 							</select>
@@ -80,7 +80,24 @@
 									<input type="radio" class="form-control" value="2" id="gender" name="gender">여자			
 								</div>
 						</div>
-						
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label col-sm-3" for="interest">관심사</label> 
+						<div class="row">
+								<div class="col-sm-2">
+									<input type="checkbox" value="정치" id="interest" name="interest">정치
+								</div>
+								<div class="col-sm-2">
+									<input type="checkbox" value="경제" id="interest" name="interest">경제
+								</div>
+								<div class="col-sm-2">
+									<input type="checkbox" value="사회" id="interest" name="interest">사회
+								</div>
+								<div class="col-sm-2">
+									<input type="checkbox" value="기타" id="interest" name="interest">기타
+								</div>
+						</div>
 					</div>
 
 					<div class="form-group">
@@ -93,6 +110,7 @@
 							</div>
 						</div>
 					</div>
+					
 				</form>
 			</div>
 		</div>

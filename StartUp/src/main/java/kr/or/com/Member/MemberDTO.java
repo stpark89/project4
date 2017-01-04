@@ -7,6 +7,8 @@ public class MemberDTO {
 	private String name;
 	private String birth;
 	private String gender;
+	private String interest;
+	
 	public String getId() {
 		return id;
 	}
@@ -37,11 +39,18 @@ public class MemberDTO {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	
+	public String getInterest() {
+		return interest;
+	}
+	public void setInterest(String interest) {
+		this.interest = interest;
+	}
 	@Override
 	public String toString() {
 		return "MemberDTO [id=" + id + ", pw=" + pw + ", name=" + name + ", birth=" + birth + ", gender=" + gender
-				+ "]";
+				+ ", interest=" + interest + "]";
 	}
+	
+	
 	
 }

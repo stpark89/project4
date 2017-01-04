@@ -17,12 +17,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  	
  	<!-- 회원가입 -->
  	<insert id="AddMember" parameterType="kr.or.com.Member.MemberDTO">
- 		insert into member(id, pw, birth, name, gender) values(#{id}, #{pw}, #{birth}, #{name}, #{gender})
+ 		insert into member(id, pw, birth, name, gender, interest) values(#{id}, #{pw}, #{birth}, #{name}, #{gender}, #{interest})
  	</insert>
  	
  	<!-- 회원가입시 아이디 중복검사 -->
  	<select id="checkId" resultType="String">
  	   select id from member where id=#{id}
  	</select>
+ 	
+ 	<!--id별 관심사   -->
+ 	<select id="selectInterest" resultType="kr.or.com.Member.MemberDTO">
+ 	   select interest from member where id=#{id}
+ 	</select>
+ 	
  	
  </mapper>

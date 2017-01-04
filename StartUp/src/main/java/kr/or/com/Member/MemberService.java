@@ -45,4 +45,10 @@ public class MemberService {
 		
 	}
 	
+	//id별 관심사
+	public MemberDTO selectInterest(String id){
+		MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
+		MemberDTO dto = dao.selectInterest(id);
+		return dto;
+	}
 }
