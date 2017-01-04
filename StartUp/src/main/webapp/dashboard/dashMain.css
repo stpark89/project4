@@ -6,7 +6,7 @@
 #dashboard {
 	position:relative;
 	width:100%;
-	height:100%;
+	height:1000px;
 	background-color:#fff;
 	overflow:hidden;	
 }
@@ -126,14 +126,14 @@
 
 /*최신소식*/
 
-#news {
+#recent {
 	position:relative;
 	width:100%;
 	height:600px;
 	background-color:#eee;	
 }
 
-#news>h1 {
+#recent>h1 {
 	position:relative;
 	width:100%;
 	height:150px;
@@ -144,7 +144,7 @@
 
 }
 
-#news>p {
+#recent>p {
 	position:relative;
 	width:100%;
 	text-align:center;
@@ -152,7 +152,7 @@
 
 }
 
-#news>article {
+#recent>article {
 	position:relative;
 	width:100%;
 	height:300px;
@@ -161,13 +161,13 @@
 	/*background-color:#F99;*/	
 }
 
-#news>article::after {
+#recent>article::after {
 	content:"";
 	display:block;
 	clear:both;	
 }
 
-#news>article>div {
+#recent>article>div {
 	width:49%;
 	height:100%;
 	float:left;	
@@ -175,14 +175,20 @@
 	box-shadow:1px 1px 5px #333;
 }
 
-#news>article>div:first-child {
+#recent>article>div:first-child {
 	margin-right:2%;	
 }
 
-#news .dashList {
+#recent .dashList {
 	border-top:1px solid #999;
 	box-sizing:border-box;	
 	width:90%;
+	height:50%;
+}
+
+#recent .dashList li {
+	height:25%;
+	line-height:40px;	
 }
 
 .main_news {
@@ -201,6 +207,7 @@
 
 .main_news h2 {
 	position:absolute;
+	width:60%;
 	top:50%;
 	right:5%;
 	text-align:right;
@@ -215,4 +222,118 @@
 
 .main_news span {
 	font:normal 16px Nanum;	
+}
+
+/*뉴스*/
+
+#news {
+	position:relative;
+	width:100%;
+	height:800px;
+}
+
+#news>h1 {
+	position:relative;
+	width:100%;
+	height:150px;
+	text-align:center;
+	font-weight:bold;
+	line-height:150px;
+	font-size:40px;
+}
+
+#news>p {
+	position:relative;
+	width:100%;
+	text-align:center;
+	margin-bottom:30px;
+}
+
+#news>ul {
+	position:relative;
+	width:100%;
+	max-width:1300px;
+	height:50px;
+	margin:0 auto;	
+	border:1px solid #ccc;
+	box-sizing:border-box;
+}
+
+#news>ul li:first-child {
+	background-color:#333;
+	color:#fff;	
+}
+
+#news>ul li {
+	position:relative;
+	width:16.666666666666666667%;
+	height:100%;
+	border-right:1px solid #ccc;
+	box-sizing:border-box;
+	font:bold 20px/50px Nanum;
+	text-align:center;
+	cursor:pointer;
+}
+
+#news>ul li:last-child {
+	border-right:0;	
+}
+
+#news>article {
+	position:relative;
+	width:100%;
+	max-width:1300px;
+	height:500px;
+	/*background-color:#CC6;*/
+	margin:0 auto;	
+	border:1px solid #ccc;
+	border-top:0 !important;
+	box-sizing:border-box;
+}
+
+#news>article::after {
+	content:"";
+	display:block;
+	clear:both;	
+}
+
+#news>article div {
+	position:relative;
+	width:50%;
+	height:50%;
+
+	box-sizing:border-box;
+	float:left;
+}
+
+#news>article div img {
+	position:relative;
+	top:10px;	
+	left:50%;
+	transform:translateX(-50%);	
+}
+
+#news .dashList {
+	position:absolute;
+	width:90%;
+	height:70%;
+	left:50%;
+	bottom:0;
+	transform:translateX(-50%);	
+}
+
+#news .dashList li {
+	font-weight:bold;
+	line-height:30px;	
+}
+
+#news .dashList li span {
+	font-weight:normal;	
+}
+
+#news hr {
+	position:relative;
+	width:95%;
+	margin:0 auto;
+ 	border:1px solid #eee;		
 }
