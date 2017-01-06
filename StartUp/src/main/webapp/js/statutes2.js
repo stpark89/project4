@@ -76,7 +76,8 @@
 					 if(committeeName.length>15){
 						 committeeName= committeeName.substring(0,15)+"...";
 					 }
-					table+="<tr><td>"+obj.proposeDt+"</td><td>"+billName+"</td><td>"+committeeName+"</td><td>"+obj.generalResult+"</td></tr>";
+					 table+="<tr><td>"+obj.proposeDt+"</td><td><a href='detailStatues.do?billId="+obj.billId+"&billName="+obj.billName+"'>"+billName+"</a></td><td>"+committeeName+"</td><td>"+obj.generalResult+"</td></tr>";
+					 //table+="<tr><td>"+obj.proposeDt+"</td><td><a href='detailStatues.do?billId="+obj.billId+">"+billName+"</a></td><td>"+committeeName+"</td><td>"+obj.generalResult+"</td></tr>";
 				});
 				 
 			 }else{

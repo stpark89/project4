@@ -53,7 +53,7 @@ public class StatuteController {
              }else{
              	committeeName=person_E.getChild("committeeName").getValue();
              }
-            statuteDTO dto = new statuteDTO(person_E.getChild("proposeDt").getValue(), person_E.getChild("billName").getValue(), committeeName,person_E.getChild("generalResult").getValue());
+            statuteDTO dto = new statuteDTO(person_E.getChild("proposeDt").getValue(), person_E.getChild("billName").getValue(), committeeName,person_E.getChild("generalResult").getValue(), person_E.getChild("billId").getValue());
             dto_list.add(dto);
         }
          
@@ -92,7 +92,7 @@ public class StatuteController {
             }else{
             	committeeName=person_E.getChild("committeeName").getValue();
             }
-            statuteDTO dto = new statuteDTO(person_E.getChild("proposeDt").getValue(), person_E.getChild("billName").getValue(), committeeName);
+            statuteDTO dto = new statuteDTO(person_E.getChild("proposeDt").getValue(), person_E.getChild("billName").getValue(), committeeName, person_E.getChild("billId").getValue());
             dto_list.add(dto);
         }
          
@@ -133,7 +133,7 @@ public View getJsictionComiteProcessList(Model model){
          }else{
          	committeeName=person_E.getChild("committeeName").getValue();
          }
-        statuteDTO dto = new statuteDTO(person_E.getChild("proposeDt").getValue(), person_E.getChild("billName").getValue(), committeeName,person_E.getChild("generalResult").getValue());
+        statuteDTO dto = new statuteDTO(person_E.getChild("proposeDt").getValue(), person_E.getChild("billName").getValue(), committeeName,person_E.getChild("generalResult").getValue(), person_E.getChild("billId").getValue());
         dto_list.add(dto);
     }
      
@@ -174,7 +174,7 @@ List<statuteDTO> dto_list = new ArrayList<statuteDTO>();
        	committeeName=person_E.getChild("committeeName").getValue();
        }
       //System.out.println("첫번쨰 : "+person_E.getChild("proposedt").getValue() + " 두번째 : "+person_E.getChild("billname").getValue());  
-      statuteDTO dto = new statuteDTO(person_E.getChild("proposedt").getValue(), person_E.getChild("billname").getValue(), committeeName);
+      statuteDTO dto = new statuteDTO(person_E.getChild("proposedt").getValue(), person_E.getChild("billname").getValue(), committeeName, person_E.getChild("billId").getValue());
       dto_list.add(dto);
   }
    
@@ -185,4 +185,16 @@ List<statuteDTO> dto_list = new ArrayList<statuteDTO>();
 	model.addAttribute("statutelist", dto_list);
 	return jsonview;
 }
+
+  //의안 상세 페이지
+ @RequestMapping("/detailStatues.do")
+ public String detailStatues(String billId, String billName, Model model){
+	 System.out.println(" billId---------------: "+billId+"?????????????billNamd: "+billName);
+     String url="http://likms.assembly.go.kr/bill/billDetail.do?billId="+billId;
+     System.out.println("URL 확인합시다 : "+url);
+	 model.addAttribute("statutelist", url);
+	 
+	 return "statute.statuteDetail";
+ }
+ 
 }

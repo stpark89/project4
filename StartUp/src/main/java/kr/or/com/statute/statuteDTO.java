@@ -8,21 +8,32 @@ public class statuteDTO {
   private String billName;
   private String committeeName;
   private String generalResult;
+  private String billId;
  
-public statuteDTO(String proposeDt, String billName, String committeeName, String generalResult) {
+public statuteDTO(String proposeDt, String billName, String committeeName, String generalResult, String billId) {
 	
 	this.proposeDt = proposeDt;
 	this.billName = billName;
 	this.committeeName = committeeName;
 	this.generalResult = generalResult;
+	this.billId = billId;
 }
 
-public statuteDTO(String proposeDt, String billName, String committeeName) {
+public statuteDTO(String proposeDt, String billName, String committeeName, String billId) {
 	
 	this.proposeDt = proposeDt;
 	this.billName = billName;
 	this.committeeName = committeeName;
+	this.billId = billId;
 }
+public String getBillId() {
+	return billId;
+}
+
+public void setBillId(String billId) {
+	this.billId = billId;
+}
+
 public String getBillName() {
 	return billName;
 }
@@ -48,10 +59,6 @@ public void setGeneralResult(String generalResult) {
 	this.generalResult = generalResult;
 }
 
-@Override
-public String toString() {
-	return "statuteDTO [proposeDt=" + proposeDt + ", billName=" + billName + ", committeeName=" + committeeName + "]";
-}
 
   
   
