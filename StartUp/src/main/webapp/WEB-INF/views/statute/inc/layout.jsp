@@ -21,9 +21,10 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/subHeader.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/statute.css">
 <script src="js/Cross.js"></script>
-<script src="js/statute2.js"></script>
-<title>법안</title>
+<script src="js/statutes2.js"></script>
+<title>의안</title>
 </head>
 <body>
 <!-- Header -->

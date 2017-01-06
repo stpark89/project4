@@ -19,8 +19,10 @@
 		<div class="col-sm-offset-2 col-sm-8">
 			
 			<form class="form-inline">
+			 
 			  <div class="form-group">
-			    <label for="statuteName">의안명</label>
+			    <label for="statuteName">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;의안명</label>
 			    <input type="text" class="form-control" id="statuteName">&nbsp;&nbsp;
 			  </div>
 			  <div class="form-group">
@@ -46,26 +48,25 @@
 			  <button type="button" id="searchStatuteBtn" class="btn btn-primary">검색</button>
 			</form>
 			<br/><br/>
-			<table class="table hover-table" id="statuteTable">
-				<!-- <tr>
-					<th>제안일</th>
-					<th>의안명</th>
-					<th>발의자</th>
-					<th>상임위원회</th>
-					<th>진행상황</th>
-				</tr>
-				<tr>
-					<td>2016-12-10</td>
-					<td>테스트</td>
-					<td>박성준</td>
-					<td></td>
-					<td>계류</td>
-				</tr> -->
-			</table>
+			
+	<div id="wrap">	
+	
+		<ul id="tabMenu">
+		    <li>최근 통과의안</li>
+			<li>최근 접수의안</li>
+			<li>처리의안</li>
+			<li>계류의안</li>
+		</ul>	
+			
+			<div id="statuteTable">
+			
+			</div>
 			
 		</div>
 		
 		<div class="col-sm-2"></div>
+	
+	</div>
 	
 	</div>
 	

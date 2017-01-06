@@ -218,6 +218,14 @@
     	    <version>3.0.0.20130526</version>
   	  	</dependency>
   		
+  		  <!--xml 파싱시 사용-->
+		<dependency>
+		    <groupId>jdom</groupId>
+		    <artifactId>jdom</artifactId>
+		    <version>1.0</version>
+		</dependency>
+  
+  		
   		<!--xml 을 json 으로 변환할 때 쓰는 것.-->
 		<dependency>
        <groupId>xom</groupId>
