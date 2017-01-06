@@ -4,11 +4,15 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.input.SAXBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.View;
 
+import kr.or.com.DashBoard_News.JTBC_News_DTO;
 import kr.or.com.FreeBoard.FreeBoardDTO;
 import kr.or.com.FreeBoard.FreeBoardService;
 import net.sf.json.JSONObject;
@@ -36,6 +41,8 @@ public class BoardController {
 		return "community.CommunityIndex";
 	}
 	
+	
+	//고용 노동부
 	@RequestMapping("/CommunityNews_1.do")
 	public View News1(Model model) throws Exception{
 		
@@ -50,44 +57,46 @@ public class BoardController {
             data += msg;
         }
         
-        
         JSONObject obj = (JSONObject) new XMLSerializer().read(data.toString());
       //  System.out.println("변환을 해봅시다 : " +obj);
         model.addAttribute("Goyoung", obj);
 		return jsonView;
 	}
 	
-	//뉴스 rss
-	@RequestMapping("/CommunityNews_2.do")
-	public View News2(Model model) throws Exception{
+	//교육부
+	@RequestMapping("/education.do")
+	public View education(Model model){
 		
-	
-		URL url= new URL("http://imnews.imbc.com/rss/news/news_00.xml");
-		URLConnection urlConn=url.openConnection(); //openConnection 해당 요청에 대해서 쓸 수 있는 connection 객체
-    
-		String headerType = urlConn.getContentType();
+		   
+			List<DashBoard_education_DTO> dto_list = new ArrayList<DashBoard_education_DTO>();
+			
+			   try{
+				
+				SAXBuilder builder = new SAXBuilder(); 
+				
+				Document jdomdoc = builder.build(new java.net.URL("http://www.korea.go.kr/rss/030000"));
+				
+				Element root= jdomdoc.getRootElement();
+		 		Element peresons_E1 =root.getChild("channel");
+		 	
+		 		List<Element> list=peresons_E1.getChildren("item");
+		 		
+		 		for(int i=0;i<list.size(); i++){
+		 			Element person_E=list.get(i);
+		 			DashBoard_education_DTO dto = new DashBoard_education_DTO(person_E.getChild("title").getValue(), person_E.getChild("link").getValue(), person_E.getChild("pubDate").getValue());
+		 			dto_list.add(dto);
+		 		}
+		 		
+		 		}catch(Exception e){
+				   e.printStackTrace();
+			   }
+		    
+		    model.addAttribute("education", dto_list);
+		    return jsonView;
 		
-		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5헤더타입은 ?? : "+headerType);
-		
-		
-		
-		BufferedReader br = new BufferedReader(new InputStreamReader(urlConn.getInputStream(),"euc-kr"));
-		
-		
-		String data="";
-        String msg = null;
-        while((msg = br.readLine())!=null)
-        {
-            data += msg;
-        }
-
-       System.out.println("data 확인좀 : "+data);
-        
-        JSONObject obj = (JSONObject) new XMLSerializer().read(data.toString()); System.out.println("변환을 해봅시다 : " +obj);
-        model.addAttribute("joinsmsn", obj);
-        return jsonView;
 	}
-	
+
+		
 	//게시판 관련 
 	@RequestMapping("/board.do")
 	public String board(){
@@ -136,7 +145,7 @@ public class BoardController {
 	
 
 	//게시판 상세보기
-	@RequestMapping("FreeBoardDetail.do")
+	@RequestMapping("/FreeBoardDetail.do")
 	public String FreeBoardDetail(String bno, Model model){
 		System.out.println("넘어온 글번호 : "+bno);
 		FreeBoardDTO dto=free_Service.selectDetail(bno);
