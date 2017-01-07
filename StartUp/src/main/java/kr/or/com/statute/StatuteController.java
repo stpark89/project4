@@ -31,18 +31,18 @@ public class StatuteController {
         try{ 
         SAXBuilder builder = new SAXBuilder(); 
         //url에 xml이 있는경우
-        Document jdomdoc = builder.build(new java.net.URL("http://apis.data.go.kr/9710000/BillInfoService/getRecentPasageList?numOfRows=30&ServiceKey=cuzCdknQ8EpFjg0Rw%2Fgd%2Br2TesHVExB8p3Pa5Rr0kgJUAhEyxcf9egVBUX29QGWrcq9ofcWuxOsECDRwsJXiSg%3D%3D"));
+        Document jdomdoc = builder.build(new java.net.URL("http://apis.data.go.kr/9710000/BillInfoService/getRecentPasageList?numOfRows=15&ServiceKey=cuzCdknQ8EpFjg0Rw%2Fgd%2Br2TesHVExB8p3Pa5Rr0kgJUAhEyxcf9egVBUX29QGWrcq9ofcWuxOsECDRwsJXiSg%3D%3D"));
         
         //response 
         Element root= jdomdoc.getRootElement();
-        //System.out.println("처음 : "+root.getName());
+        System.out.println("처음 : "+root.getName());
         
         Element second =root.getChild("body");
-        //System.out.println("두번째 : "+second.getName());
+        System.out.println("두번째 : "+second.getName());
         Element third = second.getChild("items");
         
         List<Element> items =	third.getChildren("item");
-       // System.out.println("세번째 : "+items.size() + " /  제발 ? : "+items.toString());
+        System.out.println("세번째 : "+items.size() + " /  제발 ? : "+items.toString());
         
    
         for(int i=0;i<items.size(); i++){
@@ -72,7 +72,7 @@ public class StatuteController {
         try{ 
         SAXBuilder builder = new SAXBuilder(); 
         //url에 xml이 있는경우
-        Document jdomdoc = builder.build(new java.net.URL("http://apis.data.go.kr/9710000/BillInfoService/getRecentRceptList?numOfRows=30&ServiceKey=cuzCdknQ8EpFjg0Rw%2Fgd%2Br2TesHVExB8p3Pa5Rr0kgJUAhEyxcf9egVBUX29QGWrcq9ofcWuxOsECDRwsJXiSg%3D%3D"));
+        Document jdomdoc = builder.build(new java.net.URL("http://apis.data.go.kr/9710000/BillInfoService/getRecentRceptList?numOfRows=15&ServiceKey=cuzCdknQ8EpFjg0Rw%2Fgd%2Br2TesHVExB8p3Pa5Rr0kgJUAhEyxcf9egVBUX29QGWrcq9ofcWuxOsECDRwsJXiSg%3D%3D"));
         
         //response 
         Element root= jdomdoc.getRootElement();
@@ -114,7 +114,7 @@ public View getJsictionComiteProcessList(Model model){
     try{ 
     SAXBuilder builder = new SAXBuilder(); 
     //url에 xml이 있는경우
-    Document jdomdoc = builder.build(new java.net.URL("http://apis.data.go.kr/9710000/BillInfoService/getJsictionComiteProcessList?numOfRows=30&ServiceKey=cuzCdknQ8EpFjg0Rw%2Fgd%2Br2TesHVExB8p3Pa5Rr0kgJUAhEyxcf9egVBUX29QGWrcq9ofcWuxOsECDRwsJXiSg%3D%3D"));
+    Document jdomdoc = builder.build(new java.net.URL("http://apis.data.go.kr/9710000/BillInfoService/getJsictionComiteProcessList?numOfRows=15&ServiceKey=cuzCdknQ8EpFjg0Rw%2Fgd%2Br2TesHVExB8p3Pa5Rr0kgJUAhEyxcf9egVBUX29QGWrcq9ofcWuxOsECDRwsJXiSg%3D%3D"));
     
     //response 
     Element root= jdomdoc.getRootElement();
@@ -153,7 +153,7 @@ List<statuteDTO> dto_list = new ArrayList<statuteDTO>();
   try{ 
   SAXBuilder builder = new SAXBuilder(); 
   //url에 xml이 있는경우
-  Document jdomdoc = builder.build(new java.net.URL("http://apis.data.go.kr/9710000/BillInfoService/getRecentMoorList?numOfRows=30&ServiceKey=cuzCdknQ8EpFjg0Rw%2Fgd%2Br2TesHVExB8p3Pa5Rr0kgJUAhEyxcf9egVBUX29QGWrcq9ofcWuxOsECDRwsJXiSg%3D%3D"));
+  Document jdomdoc = builder.build(new java.net.URL("http://apis.data.go.kr/9710000/BillInfoService/getRecentMoorList?numOfRows=15&ServiceKey=cuzCdknQ8EpFjg0Rw%2Fgd%2Br2TesHVExB8p3Pa5Rr0kgJUAhEyxcf9egVBUX29QGWrcq9ofcWuxOsECDRwsJXiSg%3D%3D"));
   
   //response 
   Element root= jdomdoc.getRootElement();
@@ -174,7 +174,7 @@ List<statuteDTO> dto_list = new ArrayList<statuteDTO>();
        	committeeName=person_E.getChild("committeeName").getValue();
        }
       //System.out.println("첫번쨰 : "+person_E.getChild("proposedt").getValue() + " 두번째 : "+person_E.getChild("billname").getValue());  
-      statuteDTO dto = new statuteDTO(person_E.getChild("proposedt").getValue(), person_E.getChild("billname").getValue(), committeeName, person_E.getChild("billId").getValue());
+      statuteDTO dto = new statuteDTO(person_E.getChild("proposedt").getValue(), person_E.getChild("billname").getValue(), committeeName, person_E.getChild("billid").getValue());
       dto_list.add(dto);
   }
    

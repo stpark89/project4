@@ -76,7 +76,7 @@
 					 if(committeeName.length>15){
 						 committeeName= committeeName.substring(0,15)+"...";
 					 }
-					 table+="<tr><td>"+obj.proposeDt+"</td><td><a href='detailStatues.do?billId="+obj.billId+"&billName="+obj.billName+"'>"+billName+"</a></td><td>"+committeeName+"</td><td>"+obj.generalResult+"</td></tr>";
+					 table+="<tr><td>"+obj.proposeDt+"</td><td><a href='http://likms.assembly.go.kr/bill/billDetail.do?billId="+obj.billId+"' target='_blank'>"+billName+"</a></td><td>"+committeeName+"</td><td>"+obj.generalResult+"</td></tr>";
 					 //table+="<tr><td>"+obj.proposeDt+"</td><td><a href='detailStatues.do?billId="+obj.billId+">"+billName+"</a></td><td>"+committeeName+"</td><td>"+obj.generalResult+"</td></tr>";
 				});
 				 
@@ -122,7 +122,7 @@
 						 if(committeeName.length>15){
 							 committeeName= committeeName.substring(0,15)+"...";
 						 }
-						table+="<tr><td>"+obj.proposeDt+"</td><td>"+billName+"</td><td>"+committeeName+"</td><td>"+obj.generalResult+"</td></tr>";
+						table+="<tr><td>"+obj.proposeDt+"</td><td><a href='http://likms.assembly.go.kr/bill/billDetail.do?billId="+obj.billId+"' target='_blank'>"+billName+"</a></td><td>"+committeeName+"</td><td>"+obj.generalResult+"</td></tr>";
 					});
 					 
 				 }else{
@@ -154,7 +154,7 @@ function getRecentRceptList(){
 					 if(committeeName.length>15){
 						 committeeName= committeeName.substring(0,15)+"...";
 					 }
-					table+="<tr><td>"+obj.proposeDt+"</td><td>"+billName+"</td><td>"+committeeName+"</td></tr>";
+					table+="<tr><td>"+obj.proposeDt+"</td><td><a href='http://likms.assembly.go.kr/bill/billDetail.do?billId="+obj.billId+"' target='_blank'>"+billName+"</a></td><td>"+committeeName+"</td></tr>";
 				});
 				 
 			 }else{
@@ -186,7 +186,7 @@ function getJsictionComiteProcessList(){
 					 if(committeeName.length>15){
 						 committeeName= committeeName.substring(0,15)+"...";
 					 }
-					table+="<tr><td>"+obj.proposeDt+"</td><td>"+billName+"</td><td>"+committeeName+"</td><td>"+obj.generalResult+"</td></tr>";
+					table+="<tr><td>"+obj.proposeDt+"</td><td><a href='http://likms.assembly.go.kr/bill/billDetail.do?billId="+obj.billId+"' target='_blank'>"+billName+"</a></td><td>"+committeeName+"</td><td>"+obj.generalResult+"</td></tr>";
 				});
 				 
 			 }else{
@@ -219,7 +219,7 @@ function getRecentMoorList(){
 					 if(committeeName.length>15){
 						 committeeName= committeeName.substring(0,15)+"...";
 					 }
-					table+="<tr><td>"+obj.proposeDt+"</td><td>"+billName+"</td><td>"+committeeName+"</td></tr>";
+					table+="<tr><td>"+obj.proposeDt+"</td><td><a href='http://likms.assembly.go.kr/bill/billDetail.do?billId="+obj.billId+"' target='_blank'>"+billName+"</a></td><td>"+committeeName+"</td></tr>";
 				});
 				 
 			 }else{

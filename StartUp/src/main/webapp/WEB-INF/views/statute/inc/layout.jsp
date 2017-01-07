@@ -22,8 +22,7 @@
 <link rel="stylesheet" type="text/css" href="css/subHeader.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="css/statute.css">
-<script src="js/Cross.js"></script>
-<script src="js/statutes2.js"></script>
+<script src="js/statuteslist.js"></script>
 <title>의안</title>
 </head>
 <body>

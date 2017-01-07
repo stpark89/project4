@@ -57,7 +57,6 @@
 			<li>처리의안</li>
 			<li>계류의안</li>
 		</ul>	
-			
 			<div id="statuteTable">
 			
 			</div>
